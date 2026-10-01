@@ -1,0 +1,50 @@
+import React from 'react';
+import { NotchTR } from '../utils/notches';
+import { getVolunteeringSvg } from '../utils/iconHelpers';
+
+export function Sidebar({ categories, currentCategory, onSelectCategory }) {
+  return (
+    <div className="sidebar" id="sidebarNav">
+      {categories.map((cat) => {
+        const isActive = cat.id === currentCategory;
+        const iconSvg = getVolunteeringSvg(cat.iconName, isActive);
+        const bgFilename = cat.name.toLowerCase().replace(/\s+/g, '-');
+        const bgStyle = !isActive
+          ? { backgroundImage: `url('/assets/card-backgrounds/${bgFilename}.png')` }
+          : {};
+
+        return (
+          <div
+            key={cat.id}
+            className={`tab-card ${isActive ? 'active' : ''}`}
+            style={bgStyle}
+            onClick={() => onSelectCategory(cat.id)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onSelectCategory(cat.id);
+              }
+            }}
+          >
+            <NotchTR />
+            <div className="tab-go">→</div>
+            <div className="tab-card-top">
+              <div
+                className="tab-icon"
+                dangerouslySetInnerHTML={{ __html: iconSvg }}
+              />
+            </div>
+            <div className="tab-card-bottom">
+              <div className="tab-title">{cat.name}</div>
+              {cat.subtitle && <div className="tab-subtitle">{cat.subtitle}</div>}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default Sidebar;
