@@ -2,12 +2,13 @@ import React from 'react';
 import { NotchBL } from '../utils/notches';
 import { getBenefitBlueSvg } from '../utils/iconHelpers';
 import { ArrowLeftIcon } from '../utils/arrowIcons';
-import cardBg from '../assets/card-bg.jpg';
+import { getCardBackgroundImage } from '../utils/cardBackgrounds';
 
 export function BenefitCard({ benefitName, isActive, isDimmed, onClick }) {
   const iconSvg = getBenefitBlueSvg(benefitName, isActive);
+  const bgImg = getCardBackgroundImage(benefitName, false);
   const bgStyle = !isActive
-    ? { backgroundImage: `url("${cardBg}")` }
+    ? { backgroundImage: `url("${bgImg}")` }
     : {};
 
   return (

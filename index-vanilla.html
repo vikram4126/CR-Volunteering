@@ -1823,8 +1823,8 @@
       navEl.innerHTML = categories.map((cat, idx) => {
         const isActive = idx === currentCategory;
         const iconSvg = getVolunteeringSvg(cat.iconName, isActive);
-        const bgFilename = cat.name.toLowerCase().replace(/\s+/g, '-');
-        const bgStyle = !isActive ? `style="background-image: url('assets/card-backgrounds/${bgFilename}.png');"` : '';
+        const rawName = cat.name.toLowerCase().replace(/\s+/g, '-');
+        const bgStyle = !isActive ? `style="background-image: url('assets/card-backgrounds/tab-${rawName}.png'), url('assets/card-backgrounds/${rawName}.png');"` : '';
         return `
           <div class="tab-card ${isActive ? 'active' : ''}" ${bgStyle} onclick="selectCategory(${idx})">
             ${SVG_NOTCH_TR}
