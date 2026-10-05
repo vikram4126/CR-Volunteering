@@ -31,8 +31,15 @@ export function getBenefitBlueSvg(benefitName, isWhite = false) {
   if (isWhite && svg) {
     return svg
       .replace(/stroke="#1E49E2"/gi, 'stroke="#FFFFFF"')
+      .replace(/stroke="#00338D"/gi, 'stroke="#FFFFFF"')
       .replace(/stroke="#[0-9a-fA-F]{6}"/gi, 'stroke="#FFFFFF"')
-      .replace(/fill="#1E49E2"/gi, 'fill="#FFFFFF"');
+      .replace(/fill="#1E49E2"/gi, 'fill="#FFFFFF"')
+      .replace(/fill="#00338D"/gi, 'fill="#FFFFFF"');
+  }
+  if (svg) {
+    return svg
+      .replace(/stroke="#1E49E2"/gi, 'stroke="#00338D"')
+      .replace(/fill="#1E49E2"/gi, 'fill="#00338D"');
   }
   return svg;
 }

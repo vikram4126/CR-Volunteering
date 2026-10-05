@@ -1,6 +1,7 @@
 import React from 'react';
 import { NotchBL } from '../utils/notches';
 import { getBenefitBlueSvg } from '../utils/iconHelpers';
+import { ArrowLeftIcon } from '../utils/arrowIcons';
 
 export function BenefitCard({ benefitName, isActive, isDimmed, onClick }) {
   const iconSvg = getBenefitBlueSvg(benefitName, isActive);
@@ -26,7 +27,9 @@ export function BenefitCard({ benefitName, isActive, isDimmed, onClick }) {
       title={`View opportunities for ${benefitName}`}
     >
       <NotchBL />
-      <div className="benefit-arrow-btn">←</div>
+      <div className="benefit-arrow-btn">
+        <ArrowLeftIcon size={18} strokeWidth={2.6} />
+      </div>
       <div
         className={`benefit-card-title ${
           benefitName.trim().split(/\s+/).length <= 3 ? 'short-title' : ''

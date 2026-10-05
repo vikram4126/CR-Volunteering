@@ -1,6 +1,7 @@
 import React from 'react';
 import { NotchBR } from '../utils/notches';
 import { DetailDurationBadge } from '../utils/formatDuration';
+import { ArrowRightIcon } from '../utils/arrowIcons';
 
 export function FelixSpecialView({ opp }) {
   if (!opp || !opp.subPrograms) return null;
@@ -34,7 +35,7 @@ export function FelixSpecialView({ opp }) {
                 className="opp-arrow"
                 title={sp.linkText}
               >
-                →
+                <ArrowRightIcon size={20} strokeWidth={2.6} />
               </a>
               <div>
                 <h3 className="felix-card-title">{sp.title}</h3>

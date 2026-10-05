@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { ArrowRightIcon } from '../utils/arrowIcons';
 
 export function BenefitModal({
   benefitName,
@@ -77,7 +78,9 @@ export function BenefitModal({
                   <div className="modal-item-cat">{opp.categoryName}</div>
                   <div className="modal-item-title">{opp.title}</div>
                 </div>
-                <div className="modal-item-arrow">→</div>
+                <div className="modal-item-arrow">
+                  <ArrowRightIcon size={17} strokeWidth={2.6} />
+                </div>
               </div>
             ))}
           </div>

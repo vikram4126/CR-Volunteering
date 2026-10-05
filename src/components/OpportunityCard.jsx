@@ -2,6 +2,7 @@ import React from 'react';
 import { NotchBR } from '../utils/notches';
 import { getBenefitCircleSvg } from '../utils/iconHelpers';
 import { DurationBadge } from '../utils/formatDuration';
+import { ArrowRightIcon } from '../utils/arrowIcons';
 
 export function OpportunityCard({ opp, onSelect }) {
   return (
@@ -16,7 +17,7 @@ export function OpportunityCard({ opp, onSelect }) {
         title="View Details"
         type="button"
       >
-        →
+        <ArrowRightIcon size={20} strokeWidth={2.6} />
       </button>
 
       <div className="opp-card-content">

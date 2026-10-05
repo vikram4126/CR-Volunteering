@@ -1,6 +1,7 @@
 import React from 'react';
 import { NotchTR } from '../utils/notches';
 import { getVolunteeringSvg } from '../utils/iconHelpers';
+import { ArrowRightIcon } from '../utils/arrowIcons';
 
 export function Sidebar({ categories, currentCategory, onSelectCategory }) {
   return (
@@ -29,7 +30,9 @@ export function Sidebar({ categories, currentCategory, onSelectCategory }) {
             }}
           >
             <NotchTR />
-            <div className="tab-go">→</div>
+            <div className="tab-go">
+              <ArrowRightIcon size={18} strokeWidth={2.6} />
+            </div>
             <div className="tab-card-top">
               <div
                 className="tab-icon"

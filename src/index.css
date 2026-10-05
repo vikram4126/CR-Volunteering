@@ -354,7 +354,7 @@
 
     .opp-title {
       font-family: 'KPMG-Bold', sans-serif;
-      font-size: 19px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--primary-blue);
       line-height: 1;
@@ -560,6 +560,15 @@
     .opp-card:hover .opp-arrow {
       transform: scale(1.1);
       background: var(--primary-blue-hover);
+    }
+
+    .opp-arrow svg,
+    .tab-go svg,
+    .benefit-arrow-btn svg,
+    .modal-item-arrow svg {
+      display: block;
+      pointer-events: none;
+      flex-shrink: 0;
     }
 
     /* CARD DETAIL SCREEN */
@@ -1018,6 +1027,16 @@
       height: 34px;
     }
 
+    .benefit-icon-wrapper svg [stroke]:not([stroke="none"]),
+    .detail-benefit-icon svg [stroke]:not([stroke="none"]) {
+      stroke: var(--primary-blue);
+    }
+
+    .benefit-icon-wrapper svg [fill]:not([fill="none"]),
+    .detail-benefit-icon svg [fill]:not([fill="none"]) {
+      fill: var(--primary-blue);
+    }
+
     /* ACTIVE Benefit State (when detail view is active & matches) */
     .benefit-card.active {
       background: var(--cobalt-blue) !important;
@@ -1036,8 +1055,13 @@
       box-shadow: none !important;
     }
 
-    .benefit-card.active .benefit-icon-wrapper svg path {
+    .benefit-card.active .benefit-icon-wrapper svg path,
+    .benefit-card.active .benefit-icon-wrapper svg [stroke]:not([stroke="none"]) {
       stroke: #FFFFFF !important;
+    }
+
+    .benefit-card.active .benefit-icon-wrapper svg [fill]:not([fill="none"]) {
+      fill: #FFFFFF !important;
     }
 
     /* DIMMED Benefit State (when detail view is active & does not match) */
