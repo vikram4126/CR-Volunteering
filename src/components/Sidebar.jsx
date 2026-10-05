@@ -2,6 +2,7 @@ import React from 'react';
 import { NotchTR } from '../utils/notches';
 import { getVolunteeringSvg } from '../utils/iconHelpers';
 import { ArrowRightIcon } from '../utils/arrowIcons';
+import cardBg from '../assets/card-bg.jpg';
 
 export function Sidebar({ categories, currentCategory, onSelectCategory }) {
   return (
@@ -9,9 +10,8 @@ export function Sidebar({ categories, currentCategory, onSelectCategory }) {
       {categories.map((cat) => {
         const isActive = cat.id === currentCategory;
         const iconSvg = getVolunteeringSvg(cat.iconName, isActive);
-        const bgFilename = cat.name.toLowerCase().replace(/\s+/g, '-');
         const bgStyle = !isActive
-          ? { backgroundImage: `url('/assets/card-backgrounds/${bgFilename}.png')` }
+          ? { backgroundImage: `url("${cardBg}")` }
           : {};
 
         return (
