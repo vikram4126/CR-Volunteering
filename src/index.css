@@ -40,9 +40,21 @@
 
 /* Main Application Styles */
     :root {
-      --primary-blue: #1E49E2;
-      --primary-blue-hover: #1539bd;
-      --text-navy: #0D2C74;
+      /* KPMG Brand Color Palette */
+      --kpmg-primary-blue: #00338D;
+      --kpmg-cobalt-blue: #1E49E2;
+      --kpmg-dark-blue: #0C233C;
+      --kpmg-light-blue: #ACEAFF;
+      --kpmg-pacific-blue: #00B8F5;
+      --kpmg-purple: #7213EA;
+      --kpmg-pink: #E31B6D; /* KPMG Pink for minimal use */
+
+      /* Theme Token Mappings */
+      --primary-blue: var(--kpmg-primary-blue);
+      --cobalt-blue: var(--kpmg-cobalt-blue);
+      --primary-blue-hover: #00266e;
+      --cobalt-blue-hover: #1539bd;
+      --text-navy: var(--kpmg-primary-blue);
       --text-dark: #1E293B;
       --text-muted: #64748B;
       --bg-page: #EEF2F8;
@@ -51,8 +63,8 @@
       --line-blue: #5B7EDC;
       --tab-inactive-grad: linear-gradient(135deg, #DEE6FA 0%, #D0DCFB 50%, #E0E8FC 100%);
       --benefit-inactive-grad: linear-gradient(135deg, #DEE6FA 0%, #D0DCFB 55%, #DEE6FA 100%);
-      --shadow-sm: 0 4px 14px rgba(13, 44, 116, 0.05);
-      --shadow-md: 0 8px 24px rgba(13, 44, 116, 0.08);
+      --shadow-sm: 0 4px 14px rgba(12, 35, 60, 0.05);
+      --shadow-md: 0 8px 24px rgba(12, 35, 60, 0.08);
       --radius-lg: 20px;
       --radius-md: 16px;
       --radius-sm: 12px;
@@ -75,11 +87,11 @@
       overflow-x: hidden;
     }
 
-    /* Layout: Left Sidebar 165px, Middle Section 1fr (expanded), Right Benefits 390px */
+    /* Layout: Left Sidebar 140px, Middle Section 1fr (expanded), Right Benefits 500px */
     .app-container {
       display: grid;
-      grid-template-columns: 165px minmax(680px, 1fr) 390px;
-      gap: 24px;
+      grid-template-columns: 140px minmax(680px, 1fr) 500px;
+      gap: 32px;
       width: 100%;
       max-width: 1780px;
       margin: 0 auto;
@@ -99,7 +111,7 @@
       font-family: 'KPMG-Bold', sans-serif;
       font-size: 26px;
       font-weight: 700;
-      color: var(--text-navy);
+      color: var(--primary-blue);
       letter-spacing: -0.01em;
       white-space: nowrap;
     }
@@ -184,7 +196,7 @@
     }
 
     .tab-card.active {
-      background: var(--primary-blue) !important;
+      background: var(--cobalt-blue) !important;
       background-image: none !important;
       color: #FFFFFF;
       box-shadow: none;
@@ -258,7 +270,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: var(--primary-blue);
+      background: var(--cobalt-blue);
       color: #FFFFFF;
       display: flex;
       align-items: center;
@@ -269,6 +281,11 @@
       border: none !important;
       transition: transform 0.25s ease;
       z-index: 2;
+    }
+
+    .tab-card.active .tab-go {
+      background: var(--primary-blue) !important;
+      color: #FFFFFF;
     }
 
     .tab-card:hover .tab-go {
@@ -282,9 +299,9 @@
 
     .tab-title {
       font-family: 'KPMG-Bold', sans-serif;
-      font-size: 16px;
+      font-size: 22px;
       font-weight: 700;
-      line-height: 1.2;
+      line-height: 1;
       margin-bottom: 3px;
       letter-spacing: -0.01em;
     }
@@ -313,22 +330,21 @@
       position: relative;
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: 22px 20px 20px;
+      padding: 16px;
       min-height: 265px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       box-shadow: none;
-      border: 1px solid rgba(226, 232, 240, 0.9);
+      border: none;
       cursor: pointer;
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       overflow: visible;
     }
 
     .opp-card:hover {
       transform: translateY(-3px);
       box-shadow: none;
-      border-color: #CBD5E1;
     }
 
     .opp-card-content {
@@ -340,14 +356,21 @@
       font-family: 'KPMG-Bold', sans-serif;
       font-size: 19px;
       font-weight: 700;
-      color: var(--text-navy);
-      line-height: 1.25;
+      color: var(--primary-blue);
+      line-height: 1;
       margin-bottom: 10px;
       letter-spacing: -0.01em;
+      padding-right: 0;
+      text-wrap: balance;
+    }
+
+    .opp-title.short-title {
+      max-width: 175px;
+      padding-right: 40px;
     }
 
     .opp-desc {
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.55;
       color: var(--text-dark);
       opacity: 0.85;
@@ -398,6 +421,11 @@
 
     .mini-badge svg [stroke] {
       stroke-width: 1.1px !important;
+      stroke: var(--kpmg-purple) !important;
+    }
+
+    .mini-badge svg [fill]:not([fill="none"]):not([fill="#F7F7F7"]):not([fill="#FFFFFF"]):not([fill="white"]) {
+      fill: var(--kpmg-purple) !important;
     }
 
     .opp-footer {
@@ -514,7 +542,7 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: var(--primary-blue);
+      background: var(--cobalt-blue);
       color: #FFFFFF;
       display: flex;
       align-items: center;
@@ -571,21 +599,43 @@
       font-family: 'KPMG-Bold', sans-serif;
       font-size: 26px;
       font-weight: 700;
-      color: var(--text-navy);
+      color: var(--primary-blue);
       letter-spacing: -0.01em;
     }
 
     .detail-duration {
-      font-family: 'KPMG-Bold', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
       color: var(--text-navy);
       white-space: nowrap;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
     }
 
-    .detail-desc {
-      font-size: 14.5px;
-      line-height: 1.65;
+    .detail-duration .detail-dur-num,
+    .felix-banner-duration .detail-dur-num {
+      font-family: 'KPMG-Bold', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      line-height: 1;
+    }
+
+    .detail-duration .detail-dur-unit,
+    .felix-banner-duration .detail-dur-unit {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-navy);
+      text-transform: none;
+      line-height: 1;
+    }
+
+    .detail-desc,
+    .detail-desc p {
+      font-size: 12px;
+      line-height: 1.5;
       color: #334155;
       margin-bottom: 32px;
       max-width: 95%;
@@ -620,17 +670,17 @@
     }
 
     .detail-benefit-info h4 {
-      font-family: 'KPMG-Bold', sans-serif;
-      font-size: 17px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
       font-weight: 700;
       color: var(--text-navy);
       margin-bottom: 4px;
     }
 
     .detail-benefit-info p {
-      font-size: 13.5px;
-      line-height: 1.45;
-      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-dark);
     }
 
     /* Felix / National Charity Volunteering View (matching Figma design) */
@@ -659,14 +709,18 @@
       font-family: 'KPMG-Bold', sans-serif;
       font-size: 24px;
       font-weight: 700;
-      color: var(--text-navy);
+      color: var(--primary-blue);
       letter-spacing: -0.01em;
     }
 
     .felix-banner-duration {
       font-size: 14px;
-      font-weight: 600;
+      font-family: 'Open Sans', sans-serif;
       color: var(--text-navy);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
     }
 
     .felix-banner-desc {
@@ -705,7 +759,7 @@
       font-family: 'KPMG-Bold', sans-serif;
       font-size: 18px;
       font-weight: 700;
-      color: var(--text-navy);
+      color: var(--primary-blue);
       line-height: 1.25;
       margin-bottom: 10px;
     }
@@ -758,8 +812,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--primary-blue);
-      color: #FFFFFF;
+      background: var(--cobalt-blue) !important;
+      color: #FFFFFF !important;
       font-family: 'Open Sans', sans-serif;
       font-size: 13.5px;
       font-weight: 500;
@@ -767,7 +821,7 @@
       border-radius: 24px;
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(30, 73, 226, 0.35);
+      box-shadow: 0 4px 14px rgba(30, 73, 226, 0.35) !important;
       transition: all 0.2s ease;
       white-space: nowrap;
       text-decoration: none;
@@ -782,9 +836,9 @@
     }
 
     .btn-enquire:hover {
-      background: var(--primary-blue-hover);
+      background: var(--cobalt-blue-hover) !important;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(30, 73, 226, 0.45);
+      box-shadow: 0 8px 20px rgba(30, 73, 226, 0.45) !important;
     }
 
     .btn-enquire:hover svg {
@@ -855,13 +909,14 @@
       font-family: 'KPMG-Bold', sans-serif !important;
       font-size: 26px;
       font-weight: 700;
+      color: var(--primary-blue);
       letter-spacing: -0.01em;
     }
 
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 24px;
     }
 
     .benefit-card {
@@ -888,14 +943,23 @@
       box-shadow: none;
     }
 
-    .benefit-card-title {
-      font-family: 'KPMG-Bold', sans-serif;
+    .benefit-card-title,
+    .benefits-title {
+      font-family: 'Open Sans', sans-serif;
       font-size: 13px;
       font-weight: 700;
       line-height: 1.25;
-      color: var(--text-navy);
+      color: var(--primary-blue);
       letter-spacing: -0.01em;
       z-index: 2;
+      padding-right: 0;
+      text-wrap: balance;
+    }
+
+    .benefit-card-title.short-title,
+    .benefits-title.short-title {
+      max-width: 85px;
+      padding-right: 15px;
     }
 
     .benefit-card-bottom {
@@ -922,7 +986,7 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: var(--primary-blue);
+      background: var(--cobalt-blue);
       color: #FFFFFF;
       display: flex;
       align-items: center;
@@ -956,7 +1020,7 @@
 
     /* ACTIVE Benefit State (when detail view is active & matches) */
     .benefit-card.active {
-      background: var(--primary-blue) !important;
+      background: var(--cobalt-blue) !important;
       background-image: none !important;
       box-shadow: none !important;
     }
@@ -966,8 +1030,8 @@
     }
 
     .benefit-card.active .benefit-arrow-btn {
-      background: #0D2C74;
-      /* deep navy inside circle as in design! */
+      background: var(--primary-blue) !important;
+      /* primary blue inside circle for active state */
       color: #FFFFFF;
       box-shadow: none !important;
     }
@@ -1011,7 +1075,7 @@
 
     .modal-panel {
       background: #FFFFFF;
-      border-radius: 24px;
+      border-radius: 12px;
       width: 100%;
       max-width: 560px;
       max-height: 85vh;
@@ -1095,9 +1159,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 18px;
+      padding: 10px 14px;
       border: 1px solid #E2E8F0;
-      border-radius: var(--radius-md);
+      border-radius: 8px;
       background: #FFFFFF;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -1116,27 +1180,27 @@
     }
 
     .modal-item-cat {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text-muted);
-      margin-bottom: 3px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--text-dark);
+      margin-bottom: 2px;
     }
 
     .modal-item-title {
       font-family: 'KPMG-Bold', sans-serif;
-      font-size: 16px;
+      font-size: 22px;
       font-weight: 700;
-      color: var(--text-navy);
-      line-height: 1.3;
+      color: var(--primary-blue);
+      line-height: 1.15;
     }
 
     .modal-item-arrow {
       width: 34px;
       height: 34px;
       border-radius: 50%;
-      background: var(--primary-blue);
+      background: var(--cobalt-blue);
       color: #FFFFFF;
       display: flex;
       align-items: center;
@@ -1154,7 +1218,7 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #0D2C74;
+      background: var(--primary-blue);
       color: #FFFFFF;
       padding: 16px 24px;
       border-radius: 16px;
@@ -1178,8 +1242,8 @@
     /* Responsive Queries */
     @media (max-width: 1400px) {
       .app-container {
-        grid-template-columns: 155px 1fr 360px;
-        gap: 18px;
+        grid-template-columns: 140px 1fr 500px;
+        gap: 32px;
       }
 
       .cards-grid {

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import categories from './data/categories';
-import opportunities from './data/opportunities';
-import allBenefits from './data/benefits';
+import React, { useState, useEffect } from 'react';
+import initialCategories from './data/categories';
+import initialOpportunities from './data/opportunities';
+import initialBenefits from './data/benefits';
 
 import Sidebar from './components/Sidebar';
 import MiddleSection from './components/MiddleSection';
@@ -9,9 +9,35 @@ import BenefitsSection from './components/BenefitsSection';
 import BenefitModal from './components/BenefitModal';
 
 export function App() {
+  const [categories, setCategories] = useState(initialCategories);
+  const [opportunities, setOpportunities] = useState(initialOpportunities);
+  const [allBenefits, setAllBenefits] = useState(initialBenefits);
   const [currentCategory, setCurrentCategory] = useState(0);
   const [selectedOpportunityId, setSelectedOpportunityId] = useState(null);
   const [activeModalBenefit, setActiveModalBenefit] = useState(null);
+
+  // Dynamically load updated opportunities and categories from data.json if available
+  useEffect(() => {
+    fetch('/data.json')
+      .then((res) => {
+        if (res.ok) return res.json();
+        throw new Error('No dynamic data.json');
+      })
+      .then((json) => {
+        if (json.opportunities && Array.isArray(json.opportunities)) {
+          setOpportunities(json.opportunities);
+        }
+        if (json.categories && Array.isArray(json.categories)) {
+          setCategories(json.categories);
+        }
+        if (json.allBenefits && Array.isArray(json.allBenefits)) {
+          setAllBenefits(json.allBenefits);
+        }
+      })
+      .catch(() => {
+        // Fall back seamlessly to imported opportunities.json
+      });
+  }, []);
 
   // Derive active states
   const activeCategory =

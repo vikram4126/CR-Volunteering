@@ -51,4 +51,36 @@ export function DurationBadge({ duration }) {
   );
 }
 
+export function DetailDurationBadge({ duration }) {
+  if (!duration) return null;
+  const trimmed = duration.trim();
+
+  // Multi-range e.g. "30 minutes to 1.5 hours"
+  const multiMatch = trimmed.match(/^(\d+(?:\.\d+)?)\s+minutes\s+to\s+(\d+(?:\.\d+)?)\s+hours$/i);
+  if (multiMatch) {
+    return (
+      <>
+        <span className="detail-dur-num">{multiMatch[1]}</span>
+        <span className="detail-dur-unit">minutes to</span>
+        <span className="detail-dur-num">{multiMatch[2]}</span>
+        <span className="detail-dur-unit">hours</span>
+      </>
+    );
+  }
+
+  // Standard Number + unit e.g. "30 minutes", "1-2 hours", "5-6 letters during Autumn Term"
+  const match = trimmed.match(/^(\d+(?:-\d+)?(?:\.\d+)?)\s+(.+)$/i);
+  if (match) {
+    const term = match[2].replace(/\s*2026/g, '').trim();
+    return (
+      <>
+        <span className="detail-dur-num">{match[1]}</span>
+        <span className="detail-dur-unit">{term}</span>
+      </>
+    );
+  }
+
+  return <span className="detail-dur-unit">{trimmed}</span>;
+}
+
 export default DurationBadge;

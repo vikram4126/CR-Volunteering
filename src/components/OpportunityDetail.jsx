@@ -1,12 +1,18 @@
 import React from 'react';
 import { getBenefitBlueSvg } from '../utils/iconHelpers';
 import { benefitImpactDescriptions } from '../data/benefits';
+import { DetailDurationBadge } from '../utils/formatDuration';
 
 export function OpportunityDetail({ opp }) {
   if (!opp) return null;
 
   const mailSubject = encodeURIComponent(`Enquiry - ${opp.title}`);
-  const mailHref = `mailto:uk-fmcorporateresponsibility@kpmg.co.uk?subject=${mailSubject}`;
+  const enquireHref =
+    opp.enquireUrl ||
+    opp.linkUrl ||
+    `mailto:uk-fmcorporateresponsibility@kpmg.co.uk?subject=${mailSubject}`;
+  const isExternal =
+    enquireHref.startsWith('http://') || enquireHref.startsWith('https://');
   const contactNote =
     opp.contactNote ||
     'If you are interested in this opportunity contact uk-fm corporate responsibility';
@@ -16,7 +22,9 @@ export function OpportunityDetail({ opp }) {
       <div>
         <div className="detail-header">
           <h2 className="detail-title">{opp.title}</h2>
-          <div className="detail-duration">{opp.duration}</div>
+          <div className="detail-duration">
+            <DetailDurationBadge duration={opp.duration} />
+          </div>
         </div>
         <p className="detail-desc">{opp.description}</p>
 
@@ -46,7 +54,12 @@ export function OpportunityDetail({ opp }) {
 
       <div className="detail-footer">
         <div className="detail-contact-note">{contactNote}</div>
-        <a href={mailHref} className="btn-enquire">
+        <a
+          href={enquireHref}
+          className="btn-enquire"
+          target={isExternal ? '_blank' : undefined}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+        >
           <span>Enquire now</span>
           <svg
             width="8"

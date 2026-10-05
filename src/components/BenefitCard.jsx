@@ -27,7 +27,13 @@ export function BenefitCard({ benefitName, isActive, isDimmed, onClick }) {
     >
       <NotchBL />
       <div className="benefit-arrow-btn">←</div>
-      <div className="benefit-card-title">{benefitName}</div>
+      <div
+        className={`benefit-card-title ${
+          benefitName.trim().split(/\s+/).length <= 3 ? 'short-title' : ''
+        }`}
+      >
+        {benefitName}
+      </div>
       <div className="benefit-card-bottom">
         <div
           className="benefit-icon-wrapper"

@@ -20,7 +20,13 @@ export function OpportunityCard({ opp, onSelect }) {
       </button>
 
       <div className="opp-card-content">
-        <h3 className="opp-title">{opp.title}</h3>
+        <h3
+          className={`opp-title ${
+            opp.title.trim().split(/\s+/).length <= 3 ? 'short-title' : ''
+          }`}
+        >
+          {opp.title}
+        </h3>
         <p className="opp-desc">{opp.description}</p>
       </div>
 

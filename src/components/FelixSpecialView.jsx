@@ -1,5 +1,6 @@
 import React from 'react';
 import { NotchBR } from '../utils/notches';
+import { DetailDurationBadge } from '../utils/formatDuration';
 
 export function FelixSpecialView({ opp }) {
   if (!opp || !opp.subPrograms) return null;
@@ -9,7 +10,9 @@ export function FelixSpecialView({ opp }) {
       <div className="felix-banner">
         <div className="felix-banner-header">
           <h2 className="felix-banner-title">{opp.title}</h2>
-          <div className="felix-banner-duration">{opp.duration}</div>
+          <div className="felix-banner-duration">
+            <DetailDurationBadge duration={opp.duration} />
+          </div>
         </div>
         <p className="felix-banner-desc">{opp.description}</p>
       </div>
