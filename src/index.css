@@ -225,9 +225,12 @@
     .tab-icon svg [stroke]:not([stroke="none"]),
     .benefit-icon-wrapper svg [stroke]:not([stroke="none"]),
     .detail-icon svg [stroke]:not([stroke="none"]),
-    .detail-benefit-icon svg [stroke]:not([stroke="none"]),
     .popup-benefit-icon svg [stroke]:not([stroke="none"]) {
       stroke-width: 2.2px !important;
+    }
+
+    .detail-benefit-icon svg [stroke]:not([stroke="none"]) {
+      stroke-width: 1.2px !important;
     }
 
     /* Enhanced Skills: delicate multi-finger hand art */
@@ -462,7 +465,7 @@
 
     .dur-num {
       font-family: 'KPMG-Bold', sans-serif;
-      font-size: 19px;
+      font-size: 22px;
       font-weight: 700;
       line-height: 1;
       color: var(--text-navy);
@@ -575,7 +578,7 @@
     .card-detail-view {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: 34px 38px;
+      padding: 20px 24px;
       min-height: 640px;
       box-shadow: var(--shadow-sm);
       display: flex;
@@ -660,8 +663,9 @@
 
     .detail-benefit-item {
       display: flex;
+      flex-direction: column;
       align-items: flex-start;
-      gap: 16px;
+      gap: 12px;
     }
 
     .detail-benefit-icon {
@@ -670,7 +674,7 @@
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .detail-benefit-icon svg {
@@ -679,17 +683,19 @@
     }
 
     .detail-benefit-info h4 {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 12px;
+      font-family: 'KPMG-Bold', sans-serif;
+      font-size: 15px;
       font-weight: 700;
-      color: var(--text-navy);
-      margin-bottom: 4px;
+      color: var(--primary-blue);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
     }
 
     .detail-benefit-info p {
-      font-size: 12px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
       line-height: 1.5;
-      color: var(--text-dark);
+      color: var(--primary-blue);
     }
 
     /* Felix / National Charity Volunteering View (matching Figma design) */
@@ -1066,12 +1072,12 @@
 
     /* DIMMED Benefit State (when detail view is active & does not match) */
     .benefit-card.dimmed {
-      opacity: 0.35;
-      filter: grayscale(0.2);
+      opacity: 1;
+      filter: none;
     }
 
     .benefit-card.dimmed:hover {
-      opacity: 0.95;
+      opacity: 1;
       filter: none;
       transform: translateY(-2px);
     }
