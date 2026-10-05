@@ -18,7 +18,7 @@ export function App() {
 
   // Dynamically load updated opportunities and categories from data.json if available
   useEffect(() => {
-    fetch('/data.json')
+    fetch('./data.json')
       .then((res) => {
         if (res.ok) return res.json();
         throw new Error('No dynamic data.json');
