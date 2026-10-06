@@ -660,13 +660,68 @@
       line-height: 1;
     }
 
-    .detail-desc,
-    .detail-desc p {
+    .detail-desc {
       font-size: 12px;
       line-height: 1.5;
       color: #334155;
       margin-bottom: 32px;
       max-width: 95%;
+      white-space: pre-line;
+    }
+
+    .detail-desc p,
+    .detail-desc-text {
+      margin: 0;
+      margin-bottom: 0;
+    }
+
+    .detail-desc strong {
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .detail-desc a {
+      color: var(--primary-blue, #00338D);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .detail-meta-list {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .detail-meta-row {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #334155;
+      display: block;
+    }
+
+    .detail-meta-label {
+      font-weight: 700;
+      color: #1e293b;
+      margin-right: 4px;
+    }
+
+    .detail-meta-value {
+      font-weight: 400;
+      color: #334155;
+    }
+
+    .detail-additional-text {
+      margin-top: 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #334155;
+    }
+
+    .detail-additional-text a {
+      color: var(--primary-blue, #00338D);
+      text-decoration: underline;
+      font-weight: 600;
     }
 
     /* Standard Card Benefits in Detail View */
@@ -836,6 +891,12 @@
       font-size: 13px;
       color: var(--text-muted);
       line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .detail-contact-note a {
+      color: var(--primary-blue, #00338D);
+      text-decoration: underline;
     }
 
     .btn-enquire {
@@ -869,6 +930,12 @@
       background: var(--cobalt-blue-hover) !important;
       transform: translateY(-2px);
       /* box-shadow: 0 8px 20px rgba(30, 73, 226, 0.45) !important; */
+    }
+
+    .btn-enquire.btn-disabled {
+      opacity: 0.55;
+      cursor: default;
+      pointer-events: none;
     }
 
     .btn-enquire:hover svg {
@@ -1410,223 +1477,392 @@
     ];
 
     let benefitImpactDescriptions = {
-      'Short Commitment': 'Just 1.5 hours, making it easy to fit into your schedule',
-      'Develop Leadership Skills': 'Inspire, coach, and guide others while honing your leadership capabilities',
-      'Improved Communication & Collaboration': 'Strengthen interpersonal dialogue, listening, and team engagement',
-      'Accelerate Personal & Professional Growth': 'Gain fresh perspectives, empathy, and professional purpose',
-      'Strengthen Strategic Thinking': 'Solve non-traditional problems and navigate complex community challenges',
-      'Build professional Networks': 'Fosters connections across sectors and communities',
-      'Increase Confidence & Credibility': 'Build presentation presence and mentorship confidence',
-      'Educational Impact': 'Close attainment gaps and inspire learning for young people',
-      'Reflection and Growth': 'Reflect on educational equity and lasting social impact',
-      'Leadership Development': 'Executive-level board governance, strategic oversight, and stewardship',
-      'Enhanced Skills': 'Hone core analytical, coaching, and facilitation skills in real settings'
-    };
+      "Short Commitment": "Just 1.5 hours, making it easy to fit into your schedule",
+      "Develop Leadership Skills": "Strengthen leadership and mentoring capabilities",
+      "Improved Communication & Collaboration": "Collaborate with students and colleagues",
+      "Accelerate Personal & Professional Growth": "By engaging with students and facilitating learning, you enhance your own communication, mentoring, and presentation skills. Skills that are valuable in both personal growth and professional settings",
+      "Strengthen Strategic Thinking": "Share sector expertise and guidance",
+      "Build professional Networks": "Fosters connections across sectors",
+      "Increase Confidence & Credibility": "Collaborate with students and colleagues",
+      "Educational Impact": "Raise standards, improve learning outcomes",
+      "Reflection and Growth": "Reflect on educational equity and impact",
+      "Leadership Development": "Fundraising often involves taking on leadership roles, developing skills like delegation, motivation, and team building.",
+      "Enhanced Skills": "Fundraising involves developing skills like communication, organisation, event planning, problem solving and relationship building"
+};
 
     let opportunities = [
-      // 1. One-off Volunteering (cat: 0)
       {
-        id: 1,
-        category: 0,
-        categoryName: 'One-off Volunteering',
-        title: 'Sharing Your Career Journey',
-        duration: '30 minutes',
-        description: 'Sharing Your Career Journey is the act of openly discussing your professional experiences, successes, challenges, and lessons learned with colleagues or others, aiming to inspire, guide, and support their own career growth.',
-        benefits: ['Build professional Networks', 'Reflection and Growth', 'Short Commitment'],
-        contactNote: 'If you are interested in sharing your career journey contact uk-fm corporate responsibility'
+            "id": 1,
+            "category": 0,
+            "categoryName": "One-off Volunteering",
+            "title": "Sharing Your Career Journey",
+            "duration": "30 minutes",
+            "description": "Sharing Your Career Journey is the act of openly discussing your professional experiences, successes, challenges, and lessons learned with colleagues or others, aiming to inspire, guide, and support their own career growth.",
+            "benefits": [
+                  "Build professional Networks",
+                  "Reflection and Growth",
+                  "Short Commitment"
+            ],
+            "contactNote": "If you are interested in sharing your career journey, get in touch with our team",
+            "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Sharing%20Your%20Career%20Journey"
       },
       {
-        id: 2,
-        category: 0,
-        categoryName: 'One-off Volunteering',
-        title: 'Young Enterprise',
-        duration: '2-3 hours',
-        description: 'There are a range of opportunities for colleagues to volunteer to support students in one day workshops in schools across London and the South East.',
-        benefits: ['Build professional Networks', 'Educational Impact', 'Short Commitment', 'Accelerate Personal & Professional Growth'],
-        contactNote: 'If you are interested in Young Enterprise contact uk-fm corporate responsibility'
+            "id": 2,
+            "category": 0,
+            "categoryName": "One-off Volunteering",
+            "title": "Young Enterprise",
+            "duration": "2-3 hours",
+            "description": "There are a range of opportunities for colleagues to volunteer to support students in one day workshops in schools across London and the South East.",
+            "benefits": [
+                  "Build professional Networks",
+                  "Educational Impact",
+                  "Short Commitment",
+                  "Accelerate Personal & Professional Growth"
+            ],
+            "contactNote": "New dates to be released soon.",
+            "enquireUrl": "",
+            "metaDetails": [
+                  {
+                        "label": "Upcoming dates:",
+                        "value": "New dates to be released soon"
+                  }
+            ]
       },
       {
-        id: 3,
-        category: 0,
-        categoryName: 'One-off Volunteering',
-        title: 'Rise Employability workshop',
-        duration: '3 hours',
-        description: 'Rise is an initiative that aims to boost social mobility in the UK by helping young people develop the essential skills that businesses need. The Seven Steps to Rise workshop consists of a carousel of challenges designed for students aged 14-15.',
-        benefits: ['Increase Confidence & Credibility', 'Improved Communication & Collaboration', 'Short Commitment', 'Educational Impact'],
-        contactNote: 'If you are interested in Rise Employability workshop contact uk-fm corporate responsibility'
+            "id": 3,
+            "category": 0,
+            "categoryName": "One-off Volunteering",
+            "title": "Rise Employability workshop",
+            "duration": "3 hours",
+            "description": "Rise is an initiative that aims to boost social mobility in the UK by helping young people develop the essential skills that businesses need. The Seven Steps to Rise workshop consists of a carousel of challenges designed for students aged 14-15.",
+            "benefits": [
+                  "Increase Confidence & Credibility",
+                  "Improved Communication & Collaboration",
+                  "Short Commitment",
+                  "Educational Impact"
+            ],
+            "contactNote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "enquireUrl": ""
       },
       {
-        id: 4,
-        category: 0,
-        categoryName: 'One-off Volunteering',
-        title: 'Opening Doors to Opportunities – In-Office Edition',
-        duration: '2-3 hours',
-        description: "Opening Doors to Opportunities invites schools into our offices across the UK, as part of our commitment we've made to give one million young people the opportunity to develop their skills by 2030.",
-        benefits: ['Short Commitment', 'Improved Communication & Collaboration', 'Build professional Networks', 'Increase Confidence & Credibility', 'Educational Impact'],
-        contactNote: 'If you are interested in Opening Doors to Opportunities contact uk-fm corporate responsibility'
+            "id": 4,
+            "category": 0,
+            "categoryName": "One-off Volunteering",
+            "title": "Opening Doors to Opportunities \u2013 In-Office Edition",
+            "duration": "2-3 hours",
+            "description": "Opening Doors to Opportunities invites schools into our offices across the UK, as part of our commitment we\u2019ve made to give one million young people the opportunity to develop their skills by 2030.\n\nWe\u2019re asking colleagues to help us to \u2018open doors,\u2019 by supporting 2-hour workplace visits at offices across the UK. Volunteers support the students with their activities and talk to them about working somewhere like KPMG. <strong>You do not need to have experience with young people or specific numeracy knowledge as you will be fully supported throughout.</strong> We are looking for volunteers of any grade and area of the business.",
+            "benefits": [
+                  "Short Commitment",
+                  "Improved Communication & Collaboration",
+                  "Build professional Networks",
+                  "Increase Confidence & Credibility",
+                  "Educational Impact"
+            ],
+            "contactNote": "KPMG Opening Doors to Opportunities: Office Edition - Volunteer Sign Up Form - 2026-27",
+            "enquireUrl": "https://forms.zohopublic.com/thetransformationtrust/form/KPMGOpeningDoorstoOpportunitiesOfficeEditionVolunt/formperma/F2aCnqACtJT8oBTjoUSNmhNm3Uj7amvPkTlkkfTl69I",
+            "cardDescription": "Opening Doors to Opportunities invites schools into our offices across the UK, as part of our commitment we\u2019ve made to give one million young people the opportunity to develop their skills by 2030.",
+            "buttonText": "Register now"
       },
       {
-        id: 5,
-        category: 0,
-        categoryName: 'One-off Volunteering',
-        title: 'National Charity volunteering',
-        duration: 'Flexible Timing',
-        description: 'KPMG are working with Felix to turn surplus food into social change and strengthen communities across the UK. There are many ways in which you can get involved.',
-        isFelixSpecial: true,
-        benefits: [],
-        subPrograms: [
-          {
-            title: 'Fundraise for Felix',
-            description: 'Learn about the different ways you can help to raise funds. For every £1 we raise through our partnership, Felix will be able to redistribute the equivalent of 5 meals to those who need it most.',
-            linkText: 'Click here for more information',
-            linkUrl: 'https://www.kpmg.com'
-          },
-          {
-            title: 'Volunteer for Felix',
-            description: 'Volunteering with Felix supports social impact, builds teamwork, boosts well-being, and develops skills. From packing food to cooking meals or creating care parcels, your time makes a meaningful difference.',
-            linkText: 'Click here for more information',
-            linkUrl: 'https://www.kpmg.com'
-          },
-          {
-            title: 'Warehouse volunteering',
-            description: 'Warehouse volunteering at FareShare involves sorting surplus food, picking orders, assisting deliveries, and sometimes cooking meals for communities. Join individually or as a group to support those in need.',
-            linkText: 'Click here for more information',
-            linkUrl: 'https://www.kpmg.com'
-          },
-          {
-            title: 'Create care parcels for the community',
-            description: 'Bring your team together to prepare and deliver food parcels for local Felix charities. Choose your office, date, and team size to take part in this rewarding initiative and make a meaningful difference in your local community.',
-            linkText: 'Click here to contact us',
-            linkUrl: 'mailto:uk-fmcorporateresponsibility@kpmg.co.uk?subject=Enquiry%20-%20Create%20care%20parcels%20for%20the%20community'
-          }
-        ],
-        contactNote: 'If you are interested in National Charity volunteering contact uk-fm corporate responsibility'
+            "id": 5,
+            "category": 0,
+            "categoryName": "One-off Volunteering",
+            "title": "National Charity volunteering",
+            "duration": "Flexible Timing",
+            "description": "KPMG are working with FELIX to turn surplus food into social change and strengthen communities across the UK. There are many ways in which you can get involved.",
+            "isFelixSpecial": true,
+            "benefits": [],
+            "subPrograms": [
+                  {
+                        "title": "Fundraise for FELIX",
+                        "description": "Learn about the different ways you can help to raise funds. For every \u00a31 we raise through our partnership, Felix will be able to redistribute the equivalent of 5 meals to those who need it most.",
+                        "linkText": "Click here for more information",
+                        "linkUrl": "https://www.kpmg.com"
+                  },
+                  {
+                        "title": "Volunteer for FELIX",
+                        "description": "Volunteering with Felix supports social impact, builds teamwork, boosts well-being, and develops skills. From packing food to cooking meals or creating care parcels, your time makes a meaningful difference.",
+                        "linkText": "Click here for more information",
+                        "linkUrl": "https://www.kpmg.com"
+                  },
+                  {
+                        "title": "Warehouse volunteering",
+                        "description": "Warehouse volunteering at FareShare involves sorting surplus food, picking orders, assisting deliveries, and sometimes cooking meals for communities. Join individually or as a group to support those in need.",
+                        "linkText": "Click here for more information",
+                        "linkUrl": "https://www.kpmg.com"
+                  },
+                  {
+                        "title": "Create care parcels for the community",
+                        "description": "Bring your team together to prepare and deliver food parcels for local Felix charities. Choose your office, date, and team size to take part in this rewarding initiative and make a meaningful difference in your local community.",
+                        "linkText": "Click here to contact us",
+                        "linkUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Create%20care%20parcels%20for%20the%20community"
+                  }
+            ],
+            "contactNote": "Get involved with Felix to turn surplus food into social change",
+            "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20National%20Charity%20volunteering"
       },
       {
-        id: 6,
-        category: 0,
-        categoryName: 'One-off Volunteering',
-        title: 'Inspire world of work visits CSO',
-        duration: '2-3 hours',
-        description: 'Inspire World of Work visits have been designed to give primary schools in London access to our offices to give them insight into the world of work and help them develop essential future skills by taking on the challenges facing our clients.',
-        benefits: ['Build professional Networks', 'Accelerate Personal & Professional Growth', 'Educational Impact', 'Short Commitment'],
-        contactNote: 'If you are interested in Inspire world of work visits contact uk-fm corporate responsibility'
+            "id": 6,
+            "category": 0,
+            "categoryName": "One-off Volunteering",
+            "title": "Inspire world of work visits",
+            "duration": "Timing to be confirmed",
+            "description": "Inspire World of Work visits have been designed to give primary schools in London access to our offices to give them insight into the world of work and help them develop essential future skills by taking on the challenges facing our clients.",
+            "benefits": [
+                  "Build professional Networks",
+                  "Accelerate Personal & Professional Growth",
+                  "Educational Impact",
+                  "Short Commitment"
+            ],
+            "contactNote": "Timing to be confirmed. Register now via Microsoft Forms",
+            "enquireUrl": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=uyT_3okgAESMjvceaAN4smegukqNpCBOhmXQn5qRfg5UODlUNFAzOTdJOVNFV1NOT001WkNYR0tKNy4u"
       },
       {
-        id: 7,
-        category: 0,
-        categoryName: 'One-off Volunteering',
-        title: 'Opening Doors to Opportunities – In-School Edition',
-        duration: '2-3 hours',
-        description: 'This employability skills programme supports secondary school pupils in social mobility coldspots with essential employability skills all over the UK. Volunteers can support the programme virtually or in-person.',
-        benefits: ['Short Commitment', 'Improved Communication & Collaboration', 'Build professional Networks', 'Increase Confidence & Credibility', 'Educational Impact'],
-        contactNote: 'If you are interested in Opening Doors to Opportunities contact uk-fm corporate responsibility'
-      },
-
-      // 2. On-going Opportunities (cat: 1)
-      {
-        id: 8,
-        category: 1,
-        categoryName: 'On-going Opportunities',
-        title: 'Action Tutoring',
-        duration: '2-3 hours',
-        description: 'Action Tutoring offers free maths and English support to disadvantaged pupils. Volunteers tutor virtually or in-school, with full training and materials provided. No prior teaching experience required. Support is available throughout.',
-        benefits: ['Improved Communication & Collaboration', 'Educational Impact', 'Reflection and Growth'],
-        contactNote: 'If you are interested in Action Tutoring contact uk-fm corporate responsibility'
+            "id": 7,
+            "category": 0,
+            "categoryName": "One-off Volunteering",
+            "title": "Opening Doors to Opportunities \u2013 In-School Edition",
+            "duration": "2-3 hours",
+            "description": "This employability skills programme supports secondary school pupils in social mobility coldspots with essential employability skills all over the UK. Volunteers can support the programme virtually or in-person.\n\nThe workshops are fully led by an external facilitator and educate students about the future world of work, encouraging them to develop their digital literacy and green skills.",
+            "benefits": [
+                  "Short Commitment",
+                  "Improved Communication & Collaboration",
+                  "Build professional Networks",
+                  "Increase Confidence & Credibility",
+                  "Educational Impact"
+            ],
+            "contactNote": "KPMG Opening Doors to Opportunities: In-School Edition - Volunteer Sign Up Form - 2026-27",
+            "enquireUrl": "https://forms.zohopublic.com/thetransformationtrust/form/KPMGOpeningDoorstoOpportunitiesInSchoolEditionVolu1/formperma/BhMEHP3Sq0NCNyV9MQXdtB5w3gpe81raKm74rZUvbwo",
+            "cardDescription": "This employability skills programme supports secondary school pupils in social mobility coldspots with essential employability skills all over the UK. Volunteers can support the programme virtually or in-person.",
+            "buttonText": "Register now"
       },
       {
-        id: 9,
-        category: 1,
-        categoryName: 'On-going Opportunities',
-        title: 'UpReach',
-        duration: '1-2 hours',
-        description: 'UpReach partners with KPMG to help disadvantaged students to reach their potential through mentoring, career advice, and industry insights.',
-        benefits: ['Short Commitment', 'Develop Leadership Skills', 'Accelerate Personal & Professional Growth', 'Strengthen Strategic Thinking', 'Build professional Networks', 'Increase Confidence & Credibility', 'Educational Impact', 'Reflection and Growth'],
-        contactNote: 'If you are interested in UpReach contact uk-fm corporate responsibility'
+            "id": 8,
+            "category": 1,
+            "categoryName": "On-going Opportunities",
+            "title": "Action Tutoring",
+            "duration": "2-3 hours",
+            "description": "Action Tutoring offers free maths and English support to disadvantaged pupils. Volunteers tutor virtually or in-school, with full training and materials provided. No prior teaching experience required. Support is available throughout.",
+            "benefits": [
+                  "Improved Communication & Collaboration",
+                  "Educational Impact",
+                  "Reflection and Growth"
+            ],
+            "contactNote": "Join our tutoring network to support students across the UK",
+            "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Action%20Tutoring",
+            "metaDetails": [
+                  {
+                        "label": "Block 1 (GCSE):",
+                        "value": "Opens Sep \u2013 Oct"
+                  },
+                  {
+                        "label": "Block 2 (SATs):",
+                        "value": "Opens March \u2013 April"
+                  }
+            ]
       },
       {
-        id: 10,
-        category: 1,
-        categoryName: 'On-going Opportunities',
-        title: 'The Switch – Virtual Volunteering',
-        duration: '30 minutes to 1.5 hours',
-        description: 'Flexible virtual sessions ranging from 30 mins to 1.5 hours, perfect if you want to volunteer from your desk. Support students with topics like careers, interviews, CVs and managing money.',
-        benefits: ['Improved Communication & Collaboration', 'Short Commitment', 'Educational Impact'],
-        contactNote: 'If you are interested in The Switch contact uk-fm corporate responsibility'
+            "id": 9,
+            "category": 1,
+            "categoryName": "On-going Opportunities",
+            "title": "UpReach",
+            "duration": "1-2 hours",
+            "description": "UpReach partners with KPMG to help disadvantaged students to reach their potential through mentoring, career advice, and industry insights.",
+            "benefits": [
+                  "Short Commitment",
+                  "Develop Leadership Skills",
+                  "Accelerate Personal & Professional Growth",
+                  "Strengthen Strategic Thinking",
+                  "Build professional Networks",
+                  "Increase Confidence & Credibility",
+                  "Educational Impact",
+                  "Reflection and Growth"
+            ],
+            "contactNote": "All grades and levels of experience are welcome to apply\nIf you are interested, please contact <a href=\"mailto:daniel.navarrete@kpmg.co.uk?subject=Enquiry%20-%20UpReach\">daniel.navarrete@kpmg.co.uk</a>",
+            "enquireUrl": "mailto:daniel.navarrete@kpmg.co.uk?subject=Enquiry%20-%20UpReach",
+            "buttonText": "Enquire now"
       },
       {
-        id: 11,
-        category: 1,
-        categoryName: 'On-going Opportunities',
-        title: 'Inspiration for all',
-        duration: '1-5 hours',
-        description: 'Inspiration for All is a 9-month mentoring programme pairing KPMG leaders with UK school heads to grow leadership skills. Join the November 2025 cohort by registering your interest. Matching begins soon.',
-        benefits: ['Educational Impact', 'Leadership Development', 'Strengthen Strategic Thinking', 'Build professional Networks', 'Develop Leadership Skills'],
-        contactNote: 'If you are interested in Inspiration for all contact uk-fm corporate responsibility'
+            "id": 10,
+            "category": 1,
+            "categoryName": "On-going Opportunities",
+            "title": "The Switch \u2013 Virtual Volunteering",
+            "duration": "30 minutes to 1.5 hours",
+            "description": "Flexible virtual sessions ranging from 30 mins to 1.5 hours, perfect if you want to volunteer from your desk. Support students with topics like careers, interviews, CVs and managing money.",
+            "benefits": [
+                  "Improved Communication & Collaboration",
+                  "Short Commitment",
+                  "Educational Impact"
+            ],
+            "contactNote": "",
+            "enquireUrl": "https://theswitch.my.site.com/s/",
+            "dates": "Various across summer",
+            "metaDetails": [
+                  {
+                        "label": "Dates:",
+                        "value": "Various across summer"
+                  }
+            ],
+            "buttonText": "Sign up",
+            "additionalText": "Sign up: <a href=\"https://theswitch.my.site.com/s/\" target=\"_blank\" rel=\"noopener noreferrer\">View sessions here</a>"
       },
       {
-        id: 12,
-        category: 1,
-        categoryName: 'On-going Opportunities',
-        title: 'Stem Ambassadors',
-        duration: 'Flexible Timing',
-        description: 'This employability skills programme supports secondary school pupils in social mobility coldspots with essential employability skills all over the UK. Volunteers can support the programme virtually or in-person. The works...',
-        benefits: ['Educational Impact', 'Increase Confidence & Credibility', 'Accelerate Personal & Professional Growth'],
-        contactNote: 'If you are interested in Stem Ambassadors contact uk-fm corporate responsibility'
+            "id": 11,
+            "category": 1,
+            "categoryName": "On-going Opportunities",
+            "title": "Inspiration for all",
+            "duration": "1-5 hours",
+            "description": "Inspiration for All is a 9-month mentoring programme pairing KPMG leaders with UK school heads to grow leadership skills.\n\nTo express interest in joining the November \u201826 cohort. Registration details are included.",
+            "benefits": [
+                  "Educational Impact",
+                  "Leadership Development",
+                  "Strengthen Strategic Thinking",
+                  "Build professional Networks",
+                  "Develop Leadership Skills"
+            ],
+            "contactNote": "To express interest in joining the November \u201826 cohort.",
+            "enquireUrl": "",
+            "cardDescription": "Inspiration for All is a 9-month mentoring programme pairing KPMG leaders with UK school heads to grow leadership skills.",
+            "buttonText": "Register here"
       },
       {
-        id: 13,
-        category: 1,
-        categoryName: 'On-going Opportunities',
-        title: 'School Governors',
-        duration: '1-2 hour session',
-        description: "Government roles such as school governor or trustee is a fantastic way to give back to your community and make a real difference in the lives of young people. It's a commitment that comes with a lot of responsibility, but the rewards are truly enriching.",
-        benefits: ['Accelerate Personal & Professional Growth', 'Improved Communication & Collaboration', 'Reflection and Growth', 'Enhanced Skills', 'Leadership Development', 'Strengthen Strategic Thinking', 'Build professional Networks'],
-        contactNote: 'If you are interested in School Governors contact uk-fm corporate responsibility'
+            "id": 12,
+            "category": 1,
+            "categoryName": "On-going Opportunities",
+            "title": "Stem Ambassadors",
+            "duration": "Flexible Timing",
+            "description": "STEM Ambassadors inspire young people in science, technology, engineering, and mathematics, opening doors to exciting career pathways.\n\nThis is a self-organised volunteering opportunity. To register as a STEM Ambassador, you will need to <a href=\"https://www.stem.org.uk/stem-ambassadors/become-a-stem-ambassador\" target=\"_blank\" rel=\"noopener noreferrer\">Register your interest here</a>.",
+            "cardDescription": "STEM Ambassadors inspire young people in science, technology, engineering, and mathematics, opening doors to exciting career pathways.",
+            "benefits": [
+                  "Educational Impact",
+                  "Increase Confidence & Credibility",
+                  "Accelerate Personal & Professional Growth"
+            ],
+            "contactNote": "Register your self-organised volunteering with Corporate Responsibility Team",
+            "enquireUrl": "https://kpmgoneuk.sharepoint.com/sites/gb-oi-bus-CR/SitePages/Self-organised-volunteering.aspx?source=https%3a//kpmgoneuk.sharepoint.com/sites/gb-oi-bus-CR/SitePages/Forms/ByAuthor.aspx",
+            "buttonText": "Register now"
       },
       {
-        id: 14,
-        category: 1,
-        categoryName: 'On-going Opportunities',
-        title: 'Charity Trustee',
-        duration: '1-2 hour session',
-        description: 'Being a charity trustee is a significant commitment requiring time, dedication, and a willingness to learn. However, the benefits are substantial, both for the charity and for the individual.',
-        benefits: ['Accelerate Personal & Professional Growth', 'Improved Communication & Collaboration', 'Reflection and Growth', 'Enhanced Skills', 'Leadership Development', 'Strengthen Strategic Thinking', 'Build professional Networks'],
-        contactNote: 'If you are interested in Charity Trustee contact uk-fm corporate responsibility'
-      },
-
-      // 3. Home Based Working (cat: 2)
-      {
-        id: 15,
-        category: 2,
-        categoryName: 'Home Based Working',
-        title: 'Chapter One – Become a Reading Volunteer',
-        duration: '30 minutes',
-        description: "Through Chapter One's virtual reading programme, you can support a young reader in just 30 minutes a week. It fits around your work, it's fully supported, and no teaching experience is needed.",
-        benefits: ['Short Commitment', 'Educational Impact'],
-        contactNote: 'If you are interested in Chapter One contact uk-fm corporate responsibility'
+            "id": 13,
+            "category": 1,
+            "categoryName": "On-going Opportunities",
+            "title": "School Governors",
+            "duration": "1-2 hour session",
+            "description": "Governance roles such as school governor or trustee are a fantastic way to give back to your community and make a real difference in the lives of young people. It's a commitment that comes with a lot of responsibility, but the rewards are truly enriching.",
+            "benefits": [
+                  "Accelerate Personal & Professional Growth",
+                  "Improved Communication & Collaboration",
+                  "Reflection and Growth",
+                  "Enhanced Skills",
+                  "Leadership Development",
+                  "Strengthen Strategic Thinking",
+                  "Build professional Networks"
+            ],
+            "contactNote": "To find out more about becoming a school governor, contact our team below",
+            "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20School%20Governors"
       },
       {
-        id: 16,
-        category: 2,
-        categoryName: 'Home Based Working',
-        title: 'The Switch – Virtual Volunteering',
-        duration: '30 minutes to 1.5 hours',
-        description: 'Flexible virtual sessions ranging from 30 mins to 1.5 hours, perfect if you want to volunteer from your desk. Support students with topics like careers, interviews, CVs and managing money.',
-        benefits: ['Improved Communication & Collaboration', 'Short Commitment', 'Educational Impact'],
-        contactNote: 'If you are interested in The Switch contact uk-fm corporate responsibility'
+            "id": 14,
+            "category": 1,
+            "categoryName": "On-going Opportunities",
+            "title": "Charity Trustee",
+            "duration": "1-2 hour session",
+            "description": "Being a charity trustee is a significant commitment requiring time, dedication, and a willingness to learn. However, the benefits are substantial, both for the charity and for the individual.",
+            "benefits": [
+                  "Accelerate Personal & Professional Growth",
+                  "Improved Communication & Collaboration",
+                  "Reflection and Growth",
+                  "Enhanced Skills",
+                  "Leadership Development",
+                  "Strengthen Strategic Thinking",
+                  "Build professional Networks"
+            ],
+            "contactNote": "To find out more about becoming a charity trustee, contact our team below",
+            "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Charity%20Trustee"
       },
       {
-        id: 17,
-        category: 2,
-        categoryName: 'Home Based Working',
-        title: 'Writing Partners – Become a Pen Pal',
-        duration: '5-6 letters during Autumn Term',
-        description: 'Support a child to develop their reading and writing skills by becoming a pen pal for one school term.',
-        benefits: ['Improved Communication & Collaboration', 'Short Commitment', 'Educational Impact'],
-        contactNote: 'If you are interested in Writing Partners contact uk-fm corporate responsibility'
+            "id": 15,
+            "category": 2,
+            "categoryName": "Home Based Working",
+            "title": "Chapter One \u2013 Become a Reading Volunteer",
+            "duration": "30 minutes",
+            "description": "Through Chapter One's virtual reading programme, you can support a young reader in just 30 minutes a week. It fits around your work, it's fully supported, and no teaching experience is needed.",
+            "benefits": [
+                  "Short Commitment",
+                  "Educational Impact"
+            ],
+            "contactNote": "Register here using your company email",
+            "enquireUrl": "https://app.chapterone.org.uk/register",
+            "cardDescription": "Through Chapter One's virtual reading programme, you can support a young reader in just 30 minutes a week. It fits around your work, it's fully supported, and no teaching experience is needed.",
+            "buttonText": "Register here",
+            "location": "Virtual",
+            "timeCommitment": "30mins per week during term time",
+            "metaDetails": [
+                  {
+                        "label": "Location:",
+                        "value": "Virtual"
+                  },
+                  {
+                        "label": "Time commitment:",
+                        "value": "30mins per week during term time"
+                  }
+            ]
+      },
+      {
+            "id": 16,
+            "category": 2,
+            "categoryName": "Home Based Working",
+            "title": "The Switch \u2013 Virtual Volunteering",
+            "duration": "30 minutes to 1.5 hours",
+            "description": "Flexible virtual sessions ranging from 30 mins to 1.5 hours, perfect if you want to volunteer from your desk. Support students with topics like careers, interviews, CVs and managing money.",
+            "benefits": [
+                  "Improved Communication & Collaboration",
+                  "Short Commitment",
+                  "Educational Impact"
+            ],
+            "contactNote": "",
+            "enquireUrl": "https://theswitch.my.site.com/s/",
+            "dates": "Various across summer",
+            "metaDetails": [
+                  {
+                        "label": "Dates:",
+                        "value": "Various across summer"
+                  }
+            ],
+            "buttonText": "Sign up",
+            "additionalText": "Sign up: <a href=\"https://theswitch.my.site.com/s/\" target=\"_blank\" rel=\"noopener noreferrer\">View sessions here</a>"
+      },
+      {
+            "id": 17,
+            "category": 2,
+            "categoryName": "Home Based Working",
+            "title": "Writing Partners \u2013 Become a Pen Pal",
+            "duration": "5-6 letters during Autumn Term 2026",
+            "description": "Support a child to develop their reading and writing skills by becoming a pen pal for one school term.",
+            "benefits": [
+                  "Improved Communication & Collaboration",
+                  "Short Commitment",
+                  "Educational Impact"
+            ],
+            "contactNote": "Register on the website using Partner Code: KPM/JZAR.",
+            "enquireUrl": "https://theswitch.my.site.com/s/session/a0IVh00000Ide9h/writing-partners-x-manorfield-x-kpmg-autumn-2026",
+            "cardDescription": "Support a child to develop their reading and writing skills by becoming a pen pal for one school term.",
+            "location": "Virtual",
+            "timeCommitment": "5-6 letters during Autumn Term 2026",
+            "metaDetails": [
+                  {
+                        "label": "Location:",
+                        "value": "Virtual"
+                  },
+                  {
+                        "label": "Time commitment:",
+                        "value": "5-6 letters during Autumn Term 2026"
+                  }
+            ],
+            "additionalText": "No DBS or previous volunteering experience required. Places filled quickly last term, so register interest early. Watch the training video <a href=\"https://www.youtube.com/watch?v=El-LtOykihU&feature=youtu.be\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>. Register on the website using Partner Code: <strong>KPM/JZAR</strong>.",
+            "buttonText": "Register here"
       }
-    ]
+];
 
     // APPLICATION STATE
     let currentCategory = 0;
@@ -1934,7 +2170,7 @@
                 </button>
                 <div class="opp-card-content">
                   <h3 class="opp-title ${isShort ? 'short-title' : ''}">${opp.title}</h3>
-                  <p class="opp-desc">${opp.description}</p>
+                  <p class="opp-desc">${opp.cardDescription || opp.description}</p>
                 </div>
                 <div>
                   <div class="opp-badges">${badgesHtml}</div>
@@ -2015,18 +2251,60 @@
               <h2 class="detail-title">${opp.title}</h2>
               <div class="detail-duration">${formatDetailDurationHtml(opp.duration)}</div>
             </div>
-            <p class="detail-desc">${opp.description}</p>
+            <div class="detail-desc">
+            <p class="detail-desc-text">${opp.description}</p>
+            ${(() => {
+            const metaItems = opp.metaDetails || [
+              opp.location && { label: 'Location:', value: opp.location },
+              opp.timeCommitment && { label: 'Time commitment:', value: opp.timeCommitment },
+              opp.dates && { label: 'Dates:', value: opp.dates }
+            ].filter(Boolean);
+            if (!metaItems.length) return '';
+            return `
+              <div class="detail-meta-list">
+                ${metaItems.map(item => `
+                  <div class="detail-meta-row">
+                    <span class="detail-meta-label">${item.label}</span>
+                    <span class="detail-meta-value">${item.value}</span>
+                  </div>
+                `).join('')}
+              </div>
+            `;
+          })()}
+              ${opp.additionalText ? `
+                <div class="detail-additional-text">
+                  ${opp.additionalText}
+                </div>
+              ` : ''}
+            </div>
             ${contentHtml}
           </div>
-          <div class="detail-footer">
-            <div class="detail-contact-note">${opp.contactNote || 'If you are interested in this opportunity contact uk-fm corporate responsibility'}</div>
-            <a href="${opp.enquireUrl || opp.linkUrl || `mailto:uk-fmcorporateresponsibility@kpmg.co.uk?subject=Enquiry%20-%20${encodeURIComponent(opp.title)}`}" ${(opp.enquireUrl || opp.linkUrl || '').startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} class="btn-enquire">
-              <span>Enquire now</span>
-              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M1.5 1.5L6.5 6.5L1.5 11.5"/>
-              </svg>
-            </a>
-          </div>
+          ${(() => {
+            const isBlank = opp.enquireUrl === '';
+            const enquireHref = isBlank
+              ? '#'
+              : (opp.enquireUrl || opp.linkUrl || `mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20${encodeURIComponent(opp.title)}`);
+            const isExternal = !isBlank && (enquireHref.startsWith('http://') || enquireHref.startsWith('https://'));
+            const buttonLabel = opp.buttonText || (isExternal ? 'Register now' : 'Enquire now');
+            const contactNoteText = opp.contactNote !== undefined ? opp.contactNote : 'If you are interested in this opportunity, please get in touch below';
+
+            return `
+              <div class="detail-footer">
+                <div class="detail-contact-note">${contactNoteText}</div>
+                <a
+                  href="${enquireHref}"
+                  class="btn-enquire ${isBlank ? 'btn-disabled' : ''}"
+                  ${isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''}
+                  ${isBlank ? 'onclick="event.preventDefault()"' : ''}
+                >
+                  <span>${buttonLabel}</span>
+                  <svg width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1.5 1.5L6.5 6.5L1.5 11.5"/>
+                  </svg>
+                </a>
+              </div>
+            `;
+          })()}
         </div>
       `;
     }

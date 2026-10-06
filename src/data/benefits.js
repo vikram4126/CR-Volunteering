@@ -14,16 +14,16 @@ export const allBenefits = [
 
 export const benefitImpactDescriptions = {
   'Short Commitment': 'Just 1.5 hours, making it easy to fit into your schedule',
-  'Develop Leadership Skills': 'Inspire, coach, and guide others while honing your leadership capabilities',
-  'Improved Communication & Collaboration': 'Strengthen interpersonal dialogue, listening, and team engagement',
-  'Accelerate Personal & Professional Growth': 'Gain fresh perspectives, empathy, and professional purpose',
-  'Strengthen Strategic Thinking': 'Solve non-traditional problems and navigate complex community challenges',
-  'Build professional Networks': 'Fosters connections across sectors and communities',
-  'Increase Confidence & Credibility': 'Build presentation presence and mentorship confidence',
-  'Educational Impact': 'Close attainment gaps and inspire learning for young people',
-  'Reflection and Growth': 'Reflect on educational equity and lasting social impact',
-  'Leadership Development': 'Executive-level board governance, strategic oversight, and stewardship',
-  'Enhanced Skills': 'Hone core analytical, coaching, and facilitation skills in real settings'
+  'Develop Leadership Skills': 'Strengthen leadership and mentoring capabilities',
+  'Improved Communication & Collaboration': 'Collaborate with students and colleagues',
+  'Accelerate Personal & Professional Growth': 'By engaging with students and facilitating learning, you enhance your own communication, mentoring, and presentation skills. Skills that are valuable in both personal growth and professional settings',
+  'Strengthen Strategic Thinking': 'Share sector expertise and guidance',
+  'Build professional Networks': 'Fosters connections across sectors',
+  'Increase Confidence & Credibility': 'Collaborate with students and colleagues',
+  'Educational Impact': 'Raise standards, improve learning outcomes',
+  'Reflection and Growth': 'Reflect on educational equity and impact',
+  'Leadership Development': 'Fundraising often involves taking on leadership roles, developing skills like delegation, motivation, and team building.',
+  'Enhanced Skills': 'Fundraising involves developing skills like communication, organisation, event planning, problem solving and relationship building'
 };
 
 export default allBenefits;

@@ -7,15 +7,27 @@ export function OpportunityDetail({ opp }) {
   if (!opp) return null;
 
   const mailSubject = encodeURIComponent(`Enquiry - ${opp.title}`);
-  const enquireHref =
-    opp.enquireUrl ||
-    opp.linkUrl ||
-    `mailto:uk-fmcorporateresponsibility@kpmg.co.uk?subject=${mailSubject}`;
+  const hasExplicitUrl = opp.enquireUrl !== undefined;
+  const rawHref = hasExplicitUrl
+    ? opp.enquireUrl
+    : (opp.linkUrl || `mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=${mailSubject}`);
+  const isBlank = !rawHref || rawHref === '#';
+  const enquireHref = isBlank ? '#' : rawHref;
   const isExternal =
     enquireHref.startsWith('http://') || enquireHref.startsWith('https://');
   const contactNote =
-    opp.contactNote ||
-    'If you are interested in this opportunity contact uk-fm corporate responsibility';
+    opp.contactNote !== undefined
+      ? opp.contactNote
+      : 'If you are interested in this opportunity, please get in touch below';
+  const buttonLabel =
+    opp.buttonText || (isExternal ? 'Register now' : 'Enquire now');
+  const metaItems =
+    opp.metaDetails ||
+    [
+      opp.location && { label: 'Location:', value: opp.location },
+      opp.timeCommitment && { label: 'Time commitment:', value: opp.timeCommitment },
+      opp.dates && { label: 'Dates:', value: opp.dates }
+    ].filter(Boolean);
 
   return (
     <div className="card-detail-view">
@@ -26,7 +38,28 @@ export function OpportunityDetail({ opp }) {
             <DetailDurationBadge duration={opp.duration} />
           </div>
         </div>
-        <p className="detail-desc">{opp.description}</p>
+        <div className="detail-desc">
+          <div
+            className="detail-desc-text"
+            dangerouslySetInnerHTML={{ __html: opp.description }}
+          />
+          {metaItems.length > 0 && (
+            <div className="detail-meta-list">
+              {metaItems.map((item, idx) => (
+                <div key={idx} className="detail-meta-row">
+                  <span className="detail-meta-label">{item.label}</span>
+                  <span className="detail-meta-value">{item.value}</span>
+                </div>
+              ))}
+            </div>
+          )}
+          {opp.additionalText && (
+            <div
+              className="detail-additional-text"
+              dangerouslySetInnerHTML={{ __html: opp.additionalText }}
+            />
+          )}
+        </div>
 
         <div className="detail-benefits-grid">
           {opp.benefits.map((b) => {
@@ -53,14 +86,18 @@ export function OpportunityDetail({ opp }) {
       </div>
 
       <div className="detail-footer">
-        <div className="detail-contact-note">{contactNote}</div>
+        <div
+          className="detail-contact-note"
+          dangerouslySetInnerHTML={{ __html: contactNote }}
+        />
         <a
           href={enquireHref}
-          className="btn-enquire"
+          className={`btn-enquire ${isBlank ? 'btn-disabled' : ''}`}
           target={isExternal ? '_blank' : undefined}
           rel={isExternal ? 'noopener noreferrer' : undefined}
+          onClick={isBlank ? (e) => e.preventDefault() : undefined}
         >
-          <span>Enquire now</span>
+          <span>{buttonLabel}</span>
           <svg
             width="8"
             height="13"

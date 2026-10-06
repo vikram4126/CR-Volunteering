@@ -645,13 +645,68 @@ body {
   line-height: 1;
 }
 
-.detail-desc,
-.detail-desc p {
+.detail-desc {
   font-size: 12px;
   line-height: 1.5;
   color: #334155;
   margin-bottom: 32px;
   max-width: 95%;
+  white-space: pre-line;
+}
+
+.detail-desc p,
+.detail-desc-text {
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.detail-desc strong {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.detail-desc a {
+  color: var(--primary-blue, #00338D);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.detail-meta-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-meta-row {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #334155;
+  display: block;
+}
+
+.detail-meta-label {
+  font-weight: 700;
+  color: #1e293b;
+  margin-right: 4px;
+}
+
+.detail-meta-value {
+  font-weight: 400;
+  color: #334155;
+}
+
+.detail-additional-text {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.detail-additional-text a {
+  color: var(--primary-blue, #00338D);
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 /* Standard Card Benefits in Detail View */
@@ -821,6 +876,12 @@ body {
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.5;
+  white-space: pre-line;
+}
+
+.detail-contact-note a {
+  color: var(--primary-blue, #00338D);
+  text-decoration: underline;
 }
 
 .btn-enquire {
@@ -858,6 +919,12 @@ body {
 
 .btn-enquire:hover svg {
   transform: translateX(2px);
+}
+
+.btn-enquire.btn-disabled {
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* Own Choice Volunteering Banner View */

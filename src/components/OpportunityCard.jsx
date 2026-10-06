@@ -28,7 +28,7 @@ export function OpportunityCard({ opp, onSelect }) {
         >
           {opp.title}
         </h3>
-        <p className="opp-desc">{opp.description}</p>
+        <p className="opp-desc">{opp.cardDescription || opp.description}</p>
       </div>
 
       <div>
