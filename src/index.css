@@ -646,7 +646,7 @@ body {
 }
 
 .detail-desc {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   color: #334155;
   margin-bottom: 32px;
@@ -656,6 +656,7 @@ body {
 
 .detail-desc p,
 .detail-desc-text {
+  font-size: 13px;
   margin: 0;
   margin-bottom: 0;
 }
@@ -679,21 +680,18 @@ body {
 }
 
 .detail-meta-row {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
-  color: #334155;
   display: block;
 }
 
 .detail-meta-label {
   font-weight: 700;
-  color: #1e293b;
   margin-right: 4px;
 }
 
 .detail-meta-value {
   font-weight: 400;
-  color: #334155;
 }
 
 .detail-additional-text {
@@ -739,7 +737,7 @@ body {
 }
 
 .detail-benefit-info h4 {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--primary-blue);
   margin-bottom: 6px;
@@ -748,7 +746,7 @@ body {
 
 .detail-benefit-info p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   color: var(--primary-blue);
 }
@@ -794,7 +792,7 @@ body {
 }
 
 .felix-banner-desc {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-dark);
   line-height: 1.5;
 }
@@ -835,8 +833,8 @@ body {
 }
 
 .felix-card-desc {
-  font-size: 13px;
-  color: var(--text-dark);
+  font-size: 12px;
+  color: inherit;
   line-height: 1.5;
 }
 
@@ -848,9 +846,9 @@ body {
 }
 
 .felix-card-link {
-  font-size: 13px;
+  font-size: 12px;
   color: #00338D;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
   font-weight: 600;
   transition: color 0.15s ease;
