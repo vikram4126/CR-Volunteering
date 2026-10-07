@@ -1428,8 +1428,9 @@
     <span id="toastMessage">Enquiry logged! The corporate responsibility team will be in touch.</span>
   </div>
 
-  <!-- LOAD SVG ASSET DICTIONARY -->
+  <!-- LOAD SVG ASSET DICTIONARIES -->
   <script src="assets/icons.js"></script>
+  <script src="assets/cardBackgrounds.js"></script>
 
   <script>
     // DATA MODEL DEFINITIONS (Default embedded with dynamic JSON support)
@@ -2057,8 +2058,8 @@
       navEl.innerHTML = categories.map((cat, idx) => {
         const isActive = idx === currentCategory;
         const iconSvg = getVolunteeringSvg(cat.iconName, isActive);
-        const rawName = cat.name.toLowerCase().replace(/\s+/g, '-');
-        const bgStyle = !isActive ? `style="background-image: url('assets/card-backgrounds/tab-${rawName}.png'), url('assets/card-backgrounds/${rawName}.png');"` : '';
+        const bgImg = typeof getCardBackgroundImage === 'function' ? getCardBackgroundImage(cat.name, true) : (window.getCardBackgroundImage ? window.getCardBackgroundImage(cat.name, true) : '');
+        const bgStyle = (!isActive && bgImg) ? `style="background-image: url('${bgImg}');"` : '';
         return `
           <div class="tab-card ${isActive ? 'active' : ''}" ${bgStyle} onclick="selectCategory(${idx})">
             ${SVG_NOTCH_TR}
@@ -2093,8 +2094,8 @@
         }
 
         const iconSvg = getBenefitBlueSvg(benefitName, isCardActive);
-        const bgFilename = benefitName.toLowerCase().replace(/\s+/g, '-');
-        const bgStyle = !isCardActive ? `style="background-image: url('assets/card-backgrounds/${bgFilename}.png');"` : '';
+        const bgImg = typeof getCardBackgroundImage === 'function' ? getCardBackgroundImage(benefitName, false) : (window.getCardBackgroundImage ? window.getCardBackgroundImage(benefitName, false) : '');
+        const bgStyle = (!isCardActive && bgImg) ? `style="background-image: url('${bgImg}');"` : '';
 
         const isShort = benefitName.trim().split(/\s+/).length <= 3;
 
