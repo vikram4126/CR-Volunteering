@@ -22,7 +22,7 @@ export function OpportunityCard({ opp, onSelect }) {
 
       <div className="opp-card-content">
         <h3
-          className={`opp-title ${
+          className={`opp-title header-3 ${
             opp.title.trim().split(/\s+/).length <= 3 ? 'short-title' : ''
           }`}
         >

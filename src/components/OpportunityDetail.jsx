@@ -33,7 +33,7 @@ export function OpportunityDetail({ opp }) {
     <div className="card-detail-view">
       <div>
         <div className="detail-header">
-          <h2 className="detail-title">{opp.title}</h2>
+          <h2 className="detail-title header-2">{opp.title}</h2>
           <div className="detail-duration">
             <DetailDurationBadge duration={opp.duration} />
           </div>
@@ -76,7 +76,7 @@ export function OpportunityDetail({ opp }) {
                   dangerouslySetInnerHTML={{ __html: iconSvg }}
                 />
                 <div className="detail-benefit-info">
-                  <h4>{b}</h4>
+                  <h4 className="header-4">{b}</h4>
                   <p>{customDesc}</p>
                 </div>
               </div>

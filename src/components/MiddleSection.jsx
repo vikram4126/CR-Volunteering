@@ -13,7 +13,7 @@ export function MiddleSection({
   return (
     <div className="middle-section">
       <div className="section-header">
-        <h2 id="middleHeading">{category.name}</h2>
+        <h2 className="header-2" id="middleHeading">{category.name}</h2>
         <div className="divider-line" />
         {selectedOpportunity && (
           <button

@@ -43,7 +43,7 @@ export function BenefitModal({
       <div className="modal-panel">
         <div className="modal-header">
           <div className="modal-header-info">
-            <h3 id="modalBenefitTitle">{benefitName}</h3>
+            <h3 id="modalBenefitTitle" className="header-3">{benefitName}</h3>
             <p id="modalBenefitCount">
               {countFormatted} opportunities provide this benefit.
             </p>

@@ -28,29 +28,29 @@
   ],
   "allBenefits": [
     "Short Commitment",
-    "Develop Leadership Skills",
+    "Greater Understanding of business",
     "Improved Communication & Collaboration",
     "Accelerate Personal & Professional Growth",
     "Strengthen Strategic Thinking",
     "Build professional Networks",
     "Increase Confidence & Credibility",
     "Educational Impact",
-    "Reflection and Growth",
+    "Sharing and Reflection",
     "Leadership Development",
     "Enhanced Skills"
   ],
   "benefitImpactDescriptions": {
     "Short Commitment": "Just 1.5 hours, making it easy to fit into your schedule",
-    "Develop Leadership Skills": "Strengthen leadership and mentoring capabilities",
     "Improved Communication & Collaboration": "Collaborate with students and colleagues",
     "Accelerate Personal & Professional Growth": "By engaging with students and facilitating learning, you enhance your own communication, mentoring, and presentation skills. Skills that are valuable in both personal growth and professional settings",
     "Strengthen Strategic Thinking": "Share sector expertise and guidance",
     "Build professional Networks": "Fosters connections across sectors",
     "Increase Confidence & Credibility": "Collaborate with students and colleagues",
     "Educational Impact": "Raise standards, improve learning outcomes",
-    "Reflection and Growth": "Reflect on educational equity and impact",
     "Leadership Development": "Fundraising often involves taking on leadership roles, developing skills like delegation, motivation, and team building.",
-    "Enhanced Skills": "Fundraising involves developing skills like communication, organisation, event planning, problem solving and relationship building"
+    "Enhanced Skills": "Fundraising involves developing skills like communication, organisation, event planning, problem solving and relationship building",
+    "Greater Understanding of business": "Provide insight into KPMG’s work environment.",
+    "Sharing and Reflection": "Reflect on educational equity and impact"
   },
   "opportunities": [
     {
@@ -62,7 +62,7 @@
       "description": "Sharing Your Career Journey is the act of openly discussing your professional experiences, successes, challenges, and lessons learned with colleagues or others, aiming to inspire, guide, and support their own career growth.",
       "benefits": [
         "Build professional Networks",
-        "Reflection and Growth",
+        "Sharing and Reflection",
         "Short Commitment"
       ],
       "contactNote": "If you are interested in sharing your career journey, get in touch with our team",
@@ -110,9 +110,9 @@
       "id": 4,
       "category": 0,
       "categoryName": "One-off Volunteering",
-      "title": "Opening Doors to Opportunities \u2013 In-Office Edition",
+      "title": "Opening Doors to Opportunities – In-Office Edition",
       "duration": "2-3 hours",
-      "description": "Opening Doors to Opportunities invites schools into our offices across the UK, as part of our commitment we\u2019ve made to give one million young people the opportunity to develop their skills by 2030.\n\nWe\u2019re asking colleagues to help us to \u2018open doors,\u2019 by supporting 2-hour workplace visits at offices across the UK. Volunteers support the students with their activities and talk to them about working somewhere like KPMG. <strong>You do not need to have experience with young people or specific numeracy knowledge as you will be fully supported throughout.</strong> We are looking for volunteers of any grade and area of the business.",
+      "description": "Opening Doors to Opportunities invites schools into our offices across the UK, as part of our commitment we’ve made to give one million young people the opportunity to develop their skills by 2030.\n\nWe’re asking colleagues to help us to ‘open doors,’ by supporting 2-hour workplace visits at offices across the UK. Volunteers support the students with their activities and talk to them about working somewhere like KPMG. <strong>You do not need to have experience with young people or specific numeracy knowledge as you will be fully supported throughout.</strong> We are looking for volunteers of any grade and area of the business.",
       "benefits": [
         "Short Commitment",
         "Improved Communication & Collaboration",
@@ -122,7 +122,7 @@
       ],
       "contactNote": "KPMG Opening Doors to Opportunities: Office Edition - Volunteer Sign Up Form - 2026-27",
       "enquireUrl": "https://forms.zohopublic.com/thetransformationtrust/form/KPMGOpeningDoorstoOpportunitiesOfficeEditionVolunt/formperma/F2aCnqACtJT8oBTjoUSNmhNm3Uj7amvPkTlkkfTl69I",
-      "cardDescription": "Opening Doors to Opportunities invites schools into our offices across the UK, as part of our commitment we\u2019ve made to give one million young people the opportunity to develop their skills by 2030.",
+      "cardDescription": "Opening Doors to Opportunities invites schools into our offices across the UK, as part of our commitment we’ve made to give one million young people the opportunity to develop their skills by 2030.",
       "buttonText": "Register now"
     },
     {
@@ -137,7 +137,7 @@
       "subPrograms": [
         {
           "title": "Fundraise for FELIX",
-          "description": "Learn about the different ways you can help to raise funds. For every \u00a31 we raise through our partnership, Felix will be able to redistribute the equivalent of 5 meals to those who need it most.",
+          "description": "Learn about the different ways you can help to raise funds. For every £1 we raise through our partnership, Felix will be able to redistribute the equivalent of 5 meals to those who need it most.",
           "linkText": "Click here for more information",
           "linkUrl": "https://www.kpmg.com"
         },
@@ -154,10 +154,10 @@
           "linkUrl": "https://www.kpmg.com"
         },
         {
-          "title": "Create care parcels for the community",
-          "description": "Bring your team together to prepare and deliver food parcels for local Felix charities. Choose your office, date, and team size to take part in this rewarding initiative and make a meaningful difference in your local community.",
+          "title": "Funding Fuller Plates",
+          "description": "Support The Felix Project by organising a food collection day for the 8,000+ charities it supports. Donate essential items and help us raise £200 to make an even bigger impact.",
           "linkText": "Click here to contact us",
-          "linkUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Create%20care%20parcels%20for%20the%20community"
+          "linkUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Funding%20Fuller%20Plates"
         }
       ],
       "contactNote": "Get involved with Felix to turn surplus food into social change",
@@ -183,7 +183,7 @@
       "id": 7,
       "category": 0,
       "categoryName": "One-off Volunteering",
-      "title": "Opening Doors to Opportunities \u2013 In-School Edition",
+      "title": "Opening Doors to Opportunities – In-School Edition",
       "duration": "2-3 hours",
       "description": "This employability skills programme supports secondary school pupils in social mobility coldspots with essential employability skills all over the UK. Volunteers can support the programme virtually or in-person.\n\nThe workshops are fully led by an external facilitator and educate students about the future world of work, encouraging them to develop their digital literacy and green skills.",
       "benefits": [
@@ -208,18 +208,18 @@
       "benefits": [
         "Improved Communication & Collaboration",
         "Educational Impact",
-        "Reflection and Growth"
+        "Sharing and Reflection"
       ],
       "contactNote": "Join our tutoring network to support students across the UK",
       "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Action%20Tutoring",
       "metaDetails": [
         {
           "label": "Block 1 (GCSE):",
-          "value": "Opens Sep \u2013 Oct"
+          "value": "Opens Sep – Oct"
         },
         {
           "label": "Block 2 (SATs):",
-          "value": "Opens March \u2013 April"
+          "value": "Opens March – April"
         }
       ]
     },
@@ -232,13 +232,13 @@
       "description": "UpReach partners with KPMG to help disadvantaged students to reach their potential through mentoring, career advice, and industry insights.",
       "benefits": [
         "Short Commitment",
-        "Develop Leadership Skills",
+        "Leadership Development",
         "Accelerate Personal & Professional Growth",
         "Strengthen Strategic Thinking",
         "Build professional Networks",
         "Increase Confidence & Credibility",
         "Educational Impact",
-        "Reflection and Growth"
+        "Sharing and Reflection"
       ],
       "contactNote": "All grades and levels of experience are welcome to apply\nIf you are interested, please contact <a href=\"mailto:daniel.navarrete@kpmg.co.uk?subject=Enquiry%20-%20UpReach\">daniel.navarrete@kpmg.co.uk</a>",
       "enquireUrl": "mailto:daniel.navarrete@kpmg.co.uk?subject=Enquiry%20-%20UpReach",
@@ -248,7 +248,7 @@
       "id": 10,
       "category": 1,
       "categoryName": "On-going Opportunities",
-      "title": "The Switch \u2013 Virtual Volunteering",
+      "title": "The Switch – Virtual Volunteering",
       "duration": "30 minutes to 1.5 hours",
       "description": "Flexible virtual sessions ranging from 30 mins to 1.5 hours, perfect if you want to volunteer from your desk. Support students with topics like careers, interviews, CVs and managing money.",
       "benefits": [
@@ -274,15 +274,15 @@
       "categoryName": "On-going Opportunities",
       "title": "Inspiration for all",
       "duration": "1-5 hours",
-      "description": "Inspiration for All is a 9-month mentoring programme pairing KPMG leaders with UK school heads to grow leadership skills.\n\nTo express interest in joining the November \u201826 cohort. Registration details are included.",
+      "description": "Inspiration for All is a 9-month mentoring programme pairing KPMG leaders with UK school heads to grow leadership skills.\n\nTo express interest in joining the November ‘26 cohort. Registration details are included.",
       "benefits": [
         "Educational Impact",
         "Leadership Development",
         "Strengthen Strategic Thinking",
         "Build professional Networks",
-        "Develop Leadership Skills"
+        "Greater Understanding of business"
       ],
-      "contactNote": "To express interest in joining the November \u201826 cohort.",
+      "contactNote": "To express interest in joining the November ‘26 cohort.",
       "enquireUrl": "",
       "cardDescription": "Inspiration for All is a 9-month mentoring programme pairing KPMG leaders with UK school heads to grow leadership skills.",
       "buttonText": "Register here"
@@ -314,11 +314,12 @@
       "benefits": [
         "Accelerate Personal & Professional Growth",
         "Improved Communication & Collaboration",
-        "Reflection and Growth",
+        "Sharing and Reflection",
         "Enhanced Skills",
         "Leadership Development",
         "Strengthen Strategic Thinking",
-        "Build professional Networks"
+        "Build professional Networks",
+        "Greater Understanding of business"
       ],
       "contactNote": "To find out more about becoming a school governor, contact our team below",
       "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20School%20Governors"
@@ -333,11 +334,12 @@
       "benefits": [
         "Accelerate Personal & Professional Growth",
         "Improved Communication & Collaboration",
-        "Reflection and Growth",
+        "Sharing and Reflection",
         "Enhanced Skills",
         "Leadership Development",
         "Strengthen Strategic Thinking",
-        "Build professional Networks"
+        "Build professional Networks",
+        "Greater Understanding of business"
       ],
       "contactNote": "To find out more about becoming a charity trustee, contact our team below",
       "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Charity%20Trustee"
@@ -346,7 +348,7 @@
       "id": 15,
       "category": 2,
       "categoryName": "Home Based Working",
-      "title": "Chapter One \u2013 Become a Reading Volunteer",
+      "title": "Chapter One – Become a Reading Volunteer",
       "duration": "30 minutes",
       "description": "Through Chapter One's virtual reading programme, you can support a young reader in just 30 minutes a week. It fits around your work, it's fully supported, and no teaching experience is needed.",
       "benefits": [
@@ -374,7 +376,7 @@
       "id": 16,
       "category": 2,
       "categoryName": "Home Based Working",
-      "title": "The Switch \u2013 Virtual Volunteering",
+      "title": "The Switch – Virtual Volunteering",
       "duration": "30 minutes to 1.5 hours",
       "description": "Flexible virtual sessions ranging from 30 mins to 1.5 hours, perfect if you want to volunteer from your desk. Support students with topics like careers, interviews, CVs and managing money.",
       "benefits": [
@@ -398,7 +400,7 @@
       "id": 17,
       "category": 2,
       "categoryName": "Home Based Working",
-      "title": "Writing Partners \u2013 Become a Pen Pal",
+      "title": "Writing Partners – Become a Pen Pal",
       "duration": "5-6 letters during Autumn Term 2026",
       "description": "Support a child to develop their reading and writing skills by becoming a pen pal for one school term.",
       "benefits": [

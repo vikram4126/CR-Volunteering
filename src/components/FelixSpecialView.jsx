@@ -10,7 +10,7 @@ export function FelixSpecialView({ opp }) {
     <div className="felix-view">
       <div className="felix-banner">
         <div className="felix-banner-header">
-          <h2 className="felix-banner-title">{opp.title}</h2>
+          <h2 className="felix-banner-title header-2">{opp.title}</h2>
           <div className="felix-banner-duration">
             <DetailDurationBadge duration={opp.duration} />
           </div>
@@ -38,7 +38,7 @@ export function FelixSpecialView({ opp }) {
                 <ArrowRightIcon size={20} strokeWidth={2.6} />
               </a>
               <div>
-                <h3 className="felix-card-title">{sp.title}</h3>
+                <h3 className="felix-card-title header-3">{sp.title}</h3>
                 <p className="felix-card-desc">{sp.description}</p>
               </div>
               <div className="felix-card-footer">

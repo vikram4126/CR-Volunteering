@@ -114,7 +114,32 @@
       align-items: start;
     }
 
-    /* Section Header Rows */
+    
+/* Heading Hierarchy Classes */
+h2.header-2, .header-2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h3.header-3, .header-3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h4.header-4, .header-4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-navy);
+  margin: 0;
+}
+
+/* Section Header Rows */
     .section-header {
       display: flex;
       align-items: center;
@@ -124,7 +149,6 @@
     }
 
     .section-header h2 {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 26px;
       font-weight: 700;
       color: var(--primary-blue);
@@ -316,12 +340,12 @@
       z-index: 2;
     }
 
-    .tab-title {
-      font-family: 'KPMG-Bold', sans-serif;
+    .tab-title,
+h3.tab-title {
       font-size: 22px;
       font-weight: 700;
       line-height: 1;
-      margin-bottom: 3px;
+      margin: 0 0 3px 0;
       letter-spacing: -0.01em;
     }
 
@@ -372,7 +396,6 @@
     }
 
     .opp-title {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--primary-blue);
@@ -480,7 +503,6 @@
     }
 
     .dur-num {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 22px;
       font-weight: 700;
       line-height: 1;
@@ -519,7 +541,6 @@
       color: var(--text-navy);
       padding: 4px 10px;
       border-radius: 12px;
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 13px;
       font-weight: 700;
     }
@@ -624,7 +645,6 @@
     }
 
     .detail-title {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 26px;
       font-weight: 700;
       color: var(--primary-blue);
@@ -643,7 +663,6 @@
 
     .detail-duration .detail-dur-num,
     .felix-banner-duration .detail-dur-num {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 24px;
       font-weight: 700;
       color: var(--primary-blue);
@@ -789,7 +808,6 @@
     }
 
     .felix-banner-title {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 24px;
       font-weight: 700;
       color: var(--primary-blue);
@@ -839,7 +857,6 @@
     }
 
     .felix-card-title {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 18px;
       font-weight: 700;
       color: var(--primary-blue);
@@ -950,7 +967,6 @@
     }
 
     .own-choice-banner h3 {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 24px;
       font-weight: 700;
       color: var(--text-navy);
@@ -979,7 +995,6 @@
     }
 
     .own-choice-item h4 {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 16px;
       font-weight: 700;
       color: var(--text-navy);
@@ -1001,7 +1016,6 @@
     }
 
     .benefits-section .section-header h2 {
-      font-family: 'KPMG-Bold', sans-serif !important;
       font-size: 26px;
       font-weight: 700;
       color: var(--primary-blue);
@@ -1217,7 +1231,6 @@
     }
 
     .modal-header-info h3 {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--text-navy);
@@ -1299,7 +1312,6 @@
     }
 
     .modal-item-title {
-      font-family: 'KPMG-Bold', sans-serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--primary-blue);
@@ -1383,7 +1395,7 @@
     <!-- MIDDLE SECTION -->
     <div class="middle-section">
       <div class="section-header">
-        <h2 id="middleHeading">One-off Volunteering</h2>
+        <h2 class="header-2" id="middleHeading">One-off Volunteering</h2>
         <div class="divider-line"></div>
         <button class="btn-back" id="btnBack" style="display: none;" onclick="goBackToCards()">
           <svg width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2.2"
@@ -1399,7 +1411,7 @@
     <!-- RIGHT BENEFITS COLUMN -->
     <div class="benefits-section">
       <div class="section-header">
-        <h2>Benefits</h2>
+        <h2 class="header-2">Benefits</h2>
         <div class="divider-line"></div>
       </div>
       <div class="benefits-grid" id="benefitsGrid"></div>
@@ -1411,7 +1423,7 @@
     <div class="modal-panel">
       <div class="modal-header">
         <div class="modal-header-info">
-          <h3 id="modalBenefitTitle">Develop Leadership Skills</h3>
+          <h3 id="modalBenefitTitle" class="header-3">Greater Understanding of business</h3>
           <p id="modalBenefitCount">07 opportunities provide this benefit.</p>
         </div>
         <button class="modal-close-btn" onclick="closeModal()" title="Close">✕</button>
@@ -1463,28 +1475,28 @@
 
     let allBenefits = [
       'Short Commitment',
-      'Develop Leadership Skills',
+      'Greater Understanding of business',
       'Improved Communication & Collaboration',
       'Accelerate Personal & Professional Growth',
       'Strengthen Strategic Thinking',
       'Build professional Networks',
       'Increase Confidence & Credibility',
       'Educational Impact',
-      'Reflection and Growth',
+      'Sharing and Reflection',
       'Leadership Development',
       'Enhanced Skills'
     ];
 
     let benefitImpactDescriptions = {
       "Short Commitment": "Just 1.5 hours, making it easy to fit into your schedule",
-      "Develop Leadership Skills": "Strengthen leadership and mentoring capabilities",
+      "Greater Understanding of business": "Provide insight into KPMG’s work environment.",
       "Improved Communication & Collaboration": "Collaborate with students and colleagues",
       "Accelerate Personal & Professional Growth": "By engaging with students and facilitating learning, you enhance your own communication, mentoring, and presentation skills. Skills that are valuable in both personal growth and professional settings",
       "Strengthen Strategic Thinking": "Share sector expertise and guidance",
       "Build professional Networks": "Fosters connections across sectors",
       "Increase Confidence & Credibility": "Collaborate with students and colleagues",
       "Educational Impact": "Raise standards, improve learning outcomes",
-      "Reflection and Growth": "Reflect on educational equity and impact",
+      "Sharing and Reflection": "Reflect on educational equity and impact",
       "Leadership Development": "Fundraising often involves taking on leadership roles, developing skills like delegation, motivation, and team building.",
       "Enhanced Skills": "Fundraising involves developing skills like communication, organisation, event planning, problem solving and relationship building"
 };
@@ -1499,7 +1511,7 @@
             "description": "Sharing Your Career Journey is the act of openly discussing your professional experiences, successes, challenges, and lessons learned with colleagues or others, aiming to inspire, guide, and support their own career growth.",
             "benefits": [
                   "Build professional Networks",
-                  "Reflection and Growth",
+                  "Sharing and Reflection",
                   "Short Commitment"
             ],
             "contactNote": "If you are interested in sharing your career journey, get in touch with our team",
@@ -1591,10 +1603,10 @@
                         "linkUrl": "https://www.kpmg.com"
                   },
                   {
-                        "title": "Create care parcels for the community",
-                        "description": "Bring your team together to prepare and deliver food parcels for local Felix charities. Choose your office, date, and team size to take part in this rewarding initiative and make a meaningful difference in your local community.",
+                        "title": "Funding Fuller Plates",
+                        "description": "Support The Felix Project by organising a food collection day for the 8,000+ charities it supports. Donate essential items and help us raise £200 to make an even bigger impact.",
                         "linkText": "Click here to contact us",
-                        "linkUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Create%20care%20parcels%20for%20the%20community"
+                        "linkUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Funding%20Fuller%20Plates"
                   }
             ],
             "contactNote": "Get involved with Felix to turn surplus food into social change",
@@ -1645,7 +1657,7 @@
             "benefits": [
                   "Improved Communication & Collaboration",
                   "Educational Impact",
-                  "Reflection and Growth"
+                  "Sharing and Reflection"
             ],
             "contactNote": "Join our tutoring network to support students across the UK",
             "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Action%20Tutoring",
@@ -1669,13 +1681,13 @@
             "description": "UpReach partners with KPMG to help disadvantaged students to reach their potential through mentoring, career advice, and industry insights.",
             "benefits": [
                   "Short Commitment",
-                  "Develop Leadership Skills",
+                  "Leadership Development",
                   "Accelerate Personal & Professional Growth",
                   "Strengthen Strategic Thinking",
                   "Build professional Networks",
                   "Increase Confidence & Credibility",
                   "Educational Impact",
-                  "Reflection and Growth"
+                  "Sharing and Reflection"
             ],
             "contactNote": "All grades and levels of experience are welcome to apply\nIf you are interested, please contact <a href=\"mailto:daniel.navarrete@kpmg.co.uk?subject=Enquiry%20-%20UpReach\">daniel.navarrete@kpmg.co.uk</a>",
             "enquireUrl": "mailto:daniel.navarrete@kpmg.co.uk?subject=Enquiry%20-%20UpReach",
@@ -1717,7 +1729,7 @@
                   "Leadership Development",
                   "Strengthen Strategic Thinking",
                   "Build professional Networks",
-                  "Develop Leadership Skills"
+                  "Greater Understanding of business"
             ],
             "contactNote": "To express interest in joining the November \u201826 cohort.",
             "enquireUrl": "",
@@ -1751,11 +1763,12 @@
             "benefits": [
                   "Accelerate Personal & Professional Growth",
                   "Improved Communication & Collaboration",
-                  "Reflection and Growth",
+                  "Sharing and Reflection",
                   "Enhanced Skills",
                   "Leadership Development",
                   "Strengthen Strategic Thinking",
-                  "Build professional Networks"
+                  "Build professional Networks",
+                  "Greater Understanding of business"
             ],
             "contactNote": "To find out more about becoming a school governor, contact our team below",
             "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20School%20Governors"
@@ -1770,11 +1783,12 @@
             "benefits": [
                   "Accelerate Personal & Professional Growth",
                   "Improved Communication & Collaboration",
-                  "Reflection and Growth",
+                  "Sharing and Reflection",
                   "Enhanced Skills",
                   "Leadership Development",
                   "Strengthen Strategic Thinking",
-                  "Build professional Networks"
+                  "Build professional Networks",
+                  "Greater Understanding of business"
             ],
             "contactNote": "To find out more about becoming a charity trustee, contact our team below",
             "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Charity%20Trustee"
@@ -2068,7 +2082,7 @@
               <div class="tab-icon">${iconSvg}</div>
             </div>
             <div class="tab-card-bottom">
-              <div class="tab-title">${cat.name}</div>
+              <h3 class="tab-title header-3">${cat.name}</h3>
               ${cat.subtitle ? `<div class="tab-subtitle">${cat.subtitle}</div>` : ''}
             </div>
           </div>
@@ -2168,7 +2182,7 @@
                   ${SVG_ARROW_RIGHT}
                 </button>
                 <div class="opp-card-content">
-                  <h3 class="opp-title ${isShort ? 'short-title' : ''}">${opp.title}</h3>
+                  <h3 class="opp-title header-3 ${isShort ? 'short-title' : ''}">${opp.title}</h3>
                   <p class="opp-desc">${opp.cardDescription || opp.description}</p>
                 </div>
                 <div>
@@ -2191,7 +2205,7 @@
           <div class="felix-view">
             <div class="felix-banner">
               <div class="felix-banner-header">
-                <h2 class="felix-banner-title">${opp.title}</h2>
+                <h2 class="felix-banner-title header-2">${opp.title}</h2>
                 <div class="felix-banner-duration">${formatDetailDurationHtml(opp.duration)}</div>
               </div>
               <p class="felix-banner-desc">${opp.description}</p>
@@ -2208,7 +2222,7 @@
                     ${SVG_ARROW_RIGHT}
                   </a>
                   <div>
-                    <h3 class="felix-card-title">${sp.title}</h3>
+                    <h3 class="felix-card-title header-3">${sp.title}</h3>
                     <p class="felix-card-desc">${sp.description}</p>
                   </div>
                   <div class="felix-card-footer">
@@ -2234,7 +2248,7 @@
                 <div class="detail-benefit-item" data-benefit="${b}">
                   <div class="detail-benefit-icon">${iconSvg}</div>
                   <div class="detail-benefit-info">
-                    <h4>${b}</h4>
+                    <h4 class="header-4">${b}</h4>
                     <p>${customDesc}</p>
                   </div>
                 </div>
@@ -2247,7 +2261,7 @@
         <div class="card-detail-view">
           <div>
             <div class="detail-header">
-              <h2 class="detail-title">${opp.title}</h2>
+              <h2 class="detail-title header-2">${opp.title}</h2>
               <div class="detail-duration">${formatDetailDurationHtml(opp.duration)}</div>
             </div>
             <div class="detail-desc">

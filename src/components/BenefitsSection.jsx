@@ -9,7 +9,7 @@ export function BenefitsSection({
   return (
     <div className="benefits-section">
       <div className="section-header">
-        <h2>Benefits</h2>
+        <h2 className="header-2">Benefits</h2>
         <div className="divider-line" />
       </div>
       <div className="benefits-grid" id="benefitsGrid">

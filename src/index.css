@@ -99,6 +99,31 @@ body {
   align-items: start;
 }
 
+
+/* Heading Hierarchy Classes */
+h2.header-2, .header-2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h3.header-3, .header-3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h4.header-4, .header-4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-navy);
+  margin: 0;
+}
+
 /* Section Header Rows */
 .section-header {
   display: flex;
@@ -109,7 +134,6 @@ body {
 }
 
 .section-header h2 {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 26px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -301,12 +325,12 @@ body {
   z-index: 2;
 }
 
-.tab-title {
-  font-family: 'KPMG-Bold', sans-serif;
+.tab-title,
+h3.tab-title {
   font-size: 22px;
   font-weight: 700;
   line-height: 1;
-  margin-bottom: 3px;
+  margin: 0 0 3px 0;
   letter-spacing: -0.01em;
 }
 
@@ -357,7 +381,6 @@ body {
 }
 
 .opp-title {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -465,7 +488,6 @@ body {
 }
 
 .dur-num {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 22px;
   font-weight: 700;
   line-height: 1;
@@ -504,7 +526,6 @@ body {
   color: var(--text-navy);
   padding: 4px 10px;
   border-radius: 12px;
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 13px;
   font-weight: 700;
 }
@@ -609,7 +630,6 @@ body {
 }
 
 .detail-title {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 26px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -628,7 +648,6 @@ body {
 
 .detail-duration .detail-dur-num,
 .felix-banner-duration .detail-dur-num {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -774,7 +793,6 @@ body {
 }
 
 .felix-banner-title {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -824,7 +842,6 @@ body {
 }
 
 .felix-card-title {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -935,7 +952,6 @@ body {
 }
 
 .own-choice-banner h3 {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: var(--text-navy);
@@ -964,7 +980,6 @@ body {
 }
 
 .own-choice-item h4 {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: var(--text-navy);
@@ -986,7 +1001,6 @@ body {
 }
 
 .benefits-section .section-header h2 {
-  font-family: 'KPMG-Bold', sans-serif !important;
   font-size: 26px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -1202,7 +1216,6 @@ body {
 }
 
 .modal-header-info h3 {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: var(--text-navy);
@@ -1284,7 +1297,6 @@ body {
 }
 
 .modal-item-title {
-  font-family: 'KPMG-Bold', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: var(--primary-blue);
