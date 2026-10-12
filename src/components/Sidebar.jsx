@@ -39,7 +39,7 @@ export function Sidebar({ categories, currentCategory, onSelectCategory }) {
               />
             </div>
             <div className="tab-card-bottom">
-              <h3 className="tab-title header-3">{cat.name}</h3>
+              <h3 className="tab-title header3">{cat.name}</h3>
               {cat.subtitle && <div className="tab-subtitle">{cat.subtitle}</div>}
             </div>
           </div>

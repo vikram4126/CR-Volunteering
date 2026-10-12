@@ -99,9 +99,20 @@ body {
   align-items: start;
 }
 
+/* FORCE CMS / DIALOGUE PARENT CONTAINERS TO HAVE PROPER HEIGHT */
+body div[comptype="script"],
+body div[comptype="script"] [id],
+div[comptype="script"],
+[comptype="script"],
+preview-script,
+.preview-component-child {
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
 
-/* Heading Hierarchy Classes */
-h2.header-2, .header-2 {
+/* Heading Hierarchy Classes (supporting both header2 and header-2) */
+h2.header2, .header2, h2.header-2, .header-2 {
   font-size: 26px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -109,7 +120,7 @@ h2.header-2, .header-2 {
   margin: 0;
 }
 
-h3.header-3, .header-3 {
+h3.header3, .header3, h3.header-3, .header-3 {
   font-size: 22px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -117,7 +128,7 @@ h3.header-3, .header-3 {
   margin: 0;
 }
 
-h4.header-4, .header-4 {
+h4.header4, .header4, h4.header-4, .header-4 {
   font-size: 16px;
   font-weight: 700;
   color: var(--text-navy);
@@ -227,6 +238,8 @@ h4.header-4, .header-4 {
 .tab-card.active,
 .tab-card.active .tab-title,
 .tab-card.active h3.tab-title,
+.tab-card.active .header3,
+.tab-card.active h3.header3,
 .tab-card.active .header-3,
 .tab-card.active h3.header-3,
 .tab-card.active .tab-subtitle,
