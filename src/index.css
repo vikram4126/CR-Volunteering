@@ -220,8 +220,18 @@ h4.header-4, .header-4 {
 .tab-card.active {
   background: var(--cobalt-blue) !important;
   background-image: none !important;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   box-shadow: none;
+}
+
+.tab-card.active,
+.tab-card.active .tab-title,
+.tab-card.active h3.tab-title,
+.tab-card.active .header-3,
+.tab-card.active h3.header-3,
+.tab-card.active .tab-subtitle,
+.tab-card.active .tab-card-bottom * {
+  color: #FFFFFF !important;
 }
 
 .tab-card-top {
