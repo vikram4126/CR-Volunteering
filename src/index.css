@@ -62,8 +62,8 @@
   --card-bg: #FFFFFF;
   --border-light: #E2E8F0;
   --line-blue: #5B7EDC;
-  --tab-inactive-grad: linear-gradient(135deg, #DEE6FA 0%, #D0DCFB 50%, #E0E8FC 100%);
-  --benefit-inactive-grad: linear-gradient(135deg, #DEE6FA 0%, #D0DCFB 55%, #DEE6FA 100%);
+  --tab-inactive-grad: linear-gradient(135deg, #B8C7FF 0%, #A7B8FB 50%, #95A8F2 100%);
+  --benefit-inactive-grad: linear-gradient(135deg, #B8C7FF 0%, #A7B8FB 50%, #95A8F2 100%);
   --shadow-sm: 0 4px 14px rgba(12, 35, 60, 0.05);
   --shadow-md: 0 8px 24px rgba(12, 35, 60, 0.08);
   --radius-lg: 20px;
@@ -201,9 +201,6 @@ h4.header-4, .header-4 {
   padding: 18px 14px 16px;
   min-height: 135px;
   background: var(--tab-inactive-grad);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: var(--text-navy);
   cursor: pointer;
   display: flex;
@@ -1016,9 +1013,6 @@ h3.tab-title {
 .benefit-card {
   position: relative;
   background: var(--benefit-inactive-grad);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border-radius: 18px;
   padding: 14px 12px 12px;
   height: 136px;

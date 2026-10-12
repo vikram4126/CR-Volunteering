@@ -77,8 +77,8 @@
       --card-bg: #FFFFFF;
       --border-light: #E2E8F0;
       --line-blue: #5B7EDC;
-      --tab-inactive-grad: linear-gradient(135deg, #DEE6FA 0%, #D0DCFB 50%, #E0E8FC 100%);
-      --benefit-inactive-grad: linear-gradient(135deg, #DEE6FA 0%, #D0DCFB 55%, #DEE6FA 100%);
+      --tab-inactive-grad: linear-gradient(135deg, #B8C7FF 0%, #A7B8FB 50%, #95A8F2 100%);
+      --benefit-inactive-grad: linear-gradient(135deg, #B8C7FF 0%, #A7B8FB 50%, #95A8F2 100%);
       --shadow-sm: 0 4px 14px rgba(12, 35, 60, 0.05);
       --shadow-md: 0 8px 24px rgba(12, 35, 60, 0.08);
       --radius-lg: 20px;
@@ -2072,8 +2072,7 @@ h3.tab-title {
       navEl.innerHTML = categories.map((cat, idx) => {
         const isActive = idx === currentCategory;
         const iconSvg = getVolunteeringSvg(cat.iconName, isActive);
-        const bgImg = typeof getCardBackgroundImage === 'function' ? getCardBackgroundImage(cat.name, true) : (window.getCardBackgroundImage ? window.getCardBackgroundImage(cat.name, true) : '');
-        const bgStyle = (!isActive && bgImg) ? `style="background-image: url('${bgImg}');"` : '';
+        const bgStyle = !isActive ? 'style="background: linear-gradient(135deg, #B8C7FF 0%, #A7B8FB 50%, #95A8F2 100%);"' : '';
         return `
           <div class="tab-card ${isActive ? 'active' : ''}" ${bgStyle} onclick="selectCategory(${idx})">
             ${SVG_NOTCH_TR}
@@ -2108,8 +2107,7 @@ h3.tab-title {
         }
 
         const iconSvg = getBenefitBlueSvg(benefitName, isCardActive);
-        const bgImg = typeof getCardBackgroundImage === 'function' ? getCardBackgroundImage(benefitName, false) : (window.getCardBackgroundImage ? window.getCardBackgroundImage(benefitName, false) : '');
-        const bgStyle = (!isCardActive && bgImg) ? `style="background-image: url('${bgImg}');"` : '';
+        const bgStyle = !isCardActive ? 'style="background: linear-gradient(135deg, #B8C7FF 0%, #A7B8FB 50%, #95A8F2 100%);"' : '';
 
         const isShort = benefitName.trim().split(/\s+/).length <= 3;
 
