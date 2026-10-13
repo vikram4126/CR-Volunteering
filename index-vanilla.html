@@ -595,7 +595,7 @@ h3.tab-title {
     .notch-tr path,
     .notch-bl path,
     .notch-br path {
-      fill: var(--bg-page) !important;
+      fill: #FFFFFF !important;
       stroke: none !important;
     }
 
@@ -2090,21 +2090,21 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
     // 1. Bottom-Right Notch for Middle Section Cards
     const SVG_NOTCH_BR = `
       <svg class="notch-br" viewBox="0 0 72 72" fill="none" preserveAspectRatio="none">
-        <path d="M 72 0 C 72 9.941 63.941 18 54 18 H 36 C 26.059 18 18 26.059 18 36 V 54 C 18 63.941 9.941 72 0 72 H 72 V 0 Z" fill="#EEF2F8"/>
+        <path d="M 72 0 C 72 9.941 63.941 18 54 18 H 36 C 26.059 18 18 26.059 18 36 V 54 C 18 63.941 9.941 72 0 72 H 72 V 0 Z" fill="#FFFFFF"/>
       </svg>
     `;
 
     // 2. Bottom-Left Notch for Right Benefits Cards
     const SVG_NOTCH_BL = `
       <svg class="notch-bl" viewBox="0 0 66 66" fill="none" preserveAspectRatio="none">
-        <path d="M 0 0 C 0 8.837 7.163 16 16 16 H 34 C 42.837 16 50 23.163 50 32 V 50 C 50 58.837 57.163 66 66 66 H 0 V 0 Z" fill="#EEF2F8"/>
+        <path d="M 0 0 C 0 8.837 7.163 16 16 16 H 34 C 42.837 16 50 23.163 50 32 V 50 C 50 58.837 57.163 66 66 66 H 0 V 0 Z" fill="#FFFFFF"/>
       </svg>
     `;
 
     // 3. Top-Right Notch for Left Sidebar Tabs
     const SVG_NOTCH_TR = `
       <svg class="notch-tr" viewBox="0 0 76 76" fill="none" preserveAspectRatio="none">
-        <path d="M 0 0 C 9.941 0 18 8.059 18 18 V 40.846 C 18 50.787 26.059 58.846 36 58.846 H 58 C 67.941 58.846 76 66.905 76 76.846 V 0 H 0 Z" fill="#EEF2F8"/>
+        <path d="M 0 0 C 9.941 0 18 8.059 18 18 V 40.846 C 18 50.787 26.059 58.846 36 58.846 H 58 C 67.941 58.846 76 66.905 76 76.846 V 0 H 0 Z" fill="#FFFFFF"/>
       </svg>
     `;
 
@@ -2151,7 +2151,7 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
         const iconSvg = getVolunteeringSvg(cat.iconName, isActive);
         const bgStyle = !isActive ? 'style="background: linear-gradient(135deg, #B8C7FF 0%, #A7B8FB 50%, #95A8F2 100%);"' : '';
         return `
-          <div class="tab-card ${isActive ? 'active' : ''}" ${bgStyle} onclick="selectCategory(${idx})">
+          <div class="tab-card ${isActive ? 'active' : ''}" ${bgStyle} data-category-idx="${idx}" onclick="window.selectCategory ? window.selectCategory(${idx}) : selectCategory(${idx})">
             ${SVG_NOTCH_TR}
             <div class="tab-go">${SVG_ARROW_RIGHT_SM}</div>
             <div class="tab-card-top">
@@ -2192,7 +2192,7 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
           <div class="benefit-card ${isCardActive ? 'active' : ''} ${isCardDimmed ? 'dimmed' : ''}"
                ${bgStyle}
                data-benefit="${benefitName}"
-               onclick="openBenefitModal('${benefitName}')"
+               onclick="window.openBenefitModal ? window.openBenefitModal('${benefitName}') : openBenefitModal('${benefitName}')"
                title="View opportunities for ${benefitName}">
             ${SVG_NOTCH_BL}
             <div class="benefit-arrow-btn">${SVG_ARROW_LEFT}</div>
@@ -2251,9 +2251,9 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
         const isShort = opp.title.trim().split(/\s+/).length <= 3;
 
         return `
-              <div class="opp-card" onclick="openOpportunityDetail(${opp.id})">
+              <div class="opp-card" data-opp-id="${opp.id}" onclick="window.openOpportunityDetail ? window.openOpportunityDetail(${opp.id}) : openOpportunityDetail(${opp.id})">
                 ${SVG_NOTCH_BR}
-                <button class="opp-arrow" onclick="event.stopPropagation(); openOpportunityDetail(${opp.id})" title="View Details">
+                <button class="opp-arrow" onclick="event.stopPropagation(); if (window.openOpportunityDetail) window.openOpportunityDetail(${opp.id}); else openOpportunityDetail(${opp.id});" title="View Details">
                   ${SVG_ARROW_RIGHT}
                 </button>
                 <div class="opp-card-content">
@@ -2397,6 +2397,78 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
       `;
     }
 
+    // EXPOSE GLOBAL ACTION HANDLERS ON WINDOW (Critical for Dialogue CMS inline onclick execution)
+    window.selectCategory = function(catIndex) { return selectCategory(catIndex); };
+    window.openOpportunityDetail = function(oppId) { return openOpportunityDetail(oppId); };
+    window.goBackToCards = function() { return goBackToCards(); };
+    window.openBenefitModal = function(benefitName) { return openBenefitModal(benefitName); };
+    window.closeModal = function() { return closeModal(); };
+    window.handleModalOverlayClick = function(e) { return handleModalOverlayClick(e); };
+    window.selectOpportunityFromModal = function(oppId) { return selectOpportunityFromModal(oppId); };
+    window.handleEnquire = function(title) { return handleEnquire(title); };
+    window.fixDialogueParentHeight = function() { return fixDialogueParentHeight(); };
+    window.init = function() { return init(); };
+    window.startApp = function() { return startApp(); };
+
+    // GLOBAL EVENT DELEGATION (Ensures clicks function even in sandboxed Dialogue CMS environments)
+    document.addEventListener('click', function(e) {
+      try {
+        // 1. Benefit card click
+        const benefitCard = e.target.closest('.benefit-card');
+        if (benefitCard && !e.target.closest('.modal-panel')) {
+          const bName = benefitCard.getAttribute('data-benefit');
+          if (bName) {
+            openBenefitModal(bName);
+            return;
+          }
+        }
+
+        // 2. Tab card click
+        const tabCard = e.target.closest('.tab-card');
+        if (tabCard) {
+          const catIdx = tabCard.getAttribute('data-category-idx');
+          if (catIdx !== null && catIdx !== undefined) {
+            selectCategory(parseInt(catIdx, 10));
+            return;
+          }
+        }
+
+        // 3. Opportunity card click
+        const oppCard = e.target.closest('.opp-card');
+        if (oppCard && !e.target.closest('.felix-card')) {
+          const oppId = oppCard.getAttribute('data-opp-id');
+          if (oppId !== null && oppId !== undefined) {
+            openOpportunityDetail(parseInt(oppId, 10));
+            return;
+          }
+        }
+
+        // 4. Back button
+        if (e.target.closest('#btnBack, .btn-back')) {
+          goBackToCards();
+          return;
+        }
+
+        // 5. Modal close button
+        if (e.target.closest('#closeModal, .modal-close-btn')) {
+          closeModal();
+          return;
+        }
+
+        // 6. Modal item click
+        const modalItem = e.target.closest('.modal-item');
+        if (modalItem) {
+          const modalOppId = modalItem.getAttribute('data-modal-opp-id');
+          if (modalOppId !== null && modalOppId !== undefined) {
+            selectOpportunityFromModal(parseInt(modalOppId, 10));
+            return;
+          }
+        }
+      } catch (err) {
+        console.error('Click delegation error:', err);
+      }
+    });
+
     // USER ACTIONS & INTERACTIONS
     function selectCategory(catIndex) {
       if (catIndex === 3) {
@@ -2444,7 +2516,7 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
       countEl.innerText = `${countFormatted} opportunities provide this benefit.`;
 
       listEl.innerHTML = matchingOpps.map(opp => `
-        <div class="modal-item" onclick="selectOpportunityFromModal(${opp.id})">
+        <div class="modal-item" data-modal-opp-id="${opp.id}" onclick="window.selectOpportunityFromModal ? window.selectOpportunityFromModal(${opp.id}) : selectOpportunityFromModal(${opp.id})">
           <div class="modal-item-left">
             <div class="modal-item-cat">${opp.categoryName}</div>
             <div class="modal-item-title">${opp.title}</div>
