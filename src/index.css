@@ -100,10 +100,10 @@ body {
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg-page);
   color: var(--text-dark);
-  min-height: 100vh;
+  min-height: auto;
   padding: 28px 32px;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: visible !important;
 }
 
 /* FORCE CMS / DIALOGUE PARENT CONTAINERS TO HAVE PROPER HEIGHT */

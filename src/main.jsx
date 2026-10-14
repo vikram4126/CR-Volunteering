@@ -6,6 +6,8 @@ import './index.css';
 function fixDialogueParentHeight() {
   const container = document.getElementById('root') || document.querySelector('.app-container');
   if (!container) return;
+  container.style.setProperty('overflow', 'visible', 'important');
+  container.style.setProperty('min-height', 'auto', 'important');
   let el = container.parentElement;
   while (el && el !== document.body && el !== document.documentElement) {
     el.style.setProperty('height', 'auto', 'important');

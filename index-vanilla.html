@@ -115,10 +115,10 @@
       font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--bg-page);
       color: var(--text-dark);
-      min-height: 100vh;
+      min-height: auto;
       padding: 28px 32px;
       box-sizing: border-box;
-      overflow-x: hidden;
+      overflow: visible !important;
     }
 
     
@@ -2128,6 +2128,8 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
       try {
         const app = document.querySelector('.app-container');
         if (!app) return;
+        app.style.setProperty('overflow', 'visible', 'important');
+        app.style.setProperty('min-height', 'auto', 'important');
         let el = app.parentElement;
         while (el && el !== document.body && el !== document.documentElement) {
           el.style.setProperty('height', 'auto', 'important');
