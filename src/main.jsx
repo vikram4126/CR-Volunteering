@@ -4,22 +4,17 @@ import App from './App.jsx';
 import './index.css';
 
 function fixDialogueParentHeight() {
-  const container = document.getElementById('root') || document.querySelector('.app-container');
-  if (!container) return;
-  container.style.setProperty('overflow', 'visible', 'important');
-  container.style.setProperty('min-height', 'auto', 'important');
-  let el = container.parentElement;
-  while (el && el !== document.body && el !== document.documentElement) {
-    el.style.setProperty('height', 'auto', 'important');
-    el.style.setProperty('min-height', 'auto', 'important');
-    el.style.setProperty('overflow', 'visible', 'important');
-    el = el.parentElement;
+  try {
+    const container = document.getElementById('root') || document.querySelector('.app-container');
+    if (!container) return;
+    const scriptWrapper = container.closest('div[comptype="script"], [comptype="script"]');
+    if (scriptWrapper) {
+      scriptWrapper.style.setProperty('height', 'auto', 'important');
+      scriptWrapper.style.setProperty('min-height', 'auto', 'important');
+    }
+  } catch (e) {
+    console.warn('Dialogue height adjustment:', e);
   }
-  document.querySelectorAll('div[comptype="script"], [comptype="script"], preview-script, .preview-component-child').forEach(el => {
-    el.style.setProperty('height', 'auto', 'important');
-    el.style.setProperty('min-height', 'auto', 'important');
-    el.style.setProperty('overflow', 'visible', 'important');
-  });
 }
 
 function mountApp() {
