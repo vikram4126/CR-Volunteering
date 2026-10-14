@@ -93,14 +93,11 @@
     }
 
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--bg-page);
       color: var(--text-dark);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 28px 32px;
-      overflow-x: hidden;
     }
 
     /* Layout: Left Sidebar 140px, Middle Section 1fr (expanded), Right Benefits 500px */
@@ -108,10 +105,20 @@
       display: grid;
       grid-template-columns: 140px minmax(680px, 1fr) 500px;
       gap: 32px;
-      width: 100%;
-      max-width: 1780px;
-      margin: 0 auto;
+      width: calc(100% + 16px) !important;
+      max-width: calc(100% + 16px) !important;
+      margin-left: -8px !important;
+      margin-right: -8px !important;
+      margin-top: 0;
+      margin-bottom: 0;
       align-items: start;
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-dark);
+      min-height: 100vh;
+      padding: 28px 32px;
+      box-sizing: border-box;
+      overflow-x: hidden;
     }
 
     
@@ -142,6 +149,8 @@ h3.header3, .header3, h3.header-3, .header-3 {
   color: var(--primary-blue);
   letter-spacing: -0.01em;
   margin: 0;
+  margin-bottom: 1rem;
+  line-height: 1.75rem;
 }
 
 h4.header4, .header4, h4.header-4, .header-4 {
@@ -595,7 +604,7 @@ h3.tab-title {
     .notch-tr path,
     .notch-bl path,
     .notch-br path {
-      fill: #FFFFFF !important;
+      fill: rgb(238, 242, 248) !important;
       stroke: none !important;
     }
 
@@ -1339,7 +1348,8 @@ h3.tab-title {
       font-size: 22px;
       font-weight: 700;
       color: var(--primary-blue);
-      line-height: 1.15;
+      line-height: 1.75rem;
+      margin-bottom: 1rem;
     }
 
     .modal-item-arrow {
@@ -2090,21 +2100,21 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
     // 1. Bottom-Right Notch for Middle Section Cards
     const SVG_NOTCH_BR = `
       <svg class="notch-br" viewBox="0 0 72 72" fill="none" preserveAspectRatio="none">
-        <path d="M 72 0 C 72 9.941 63.941 18 54 18 H 36 C 26.059 18 18 26.059 18 36 V 54 C 18 63.941 9.941 72 0 72 H 72 V 0 Z" fill="#FFFFFF"/>
+        <path d="M 72 0 C 72 9.941 63.941 18 54 18 H 36 C 26.059 18 18 26.059 18 36 V 54 C 18 63.941 9.941 72 0 72 H 72 V 0 Z" fill="rgb(238, 242, 248)"/>
       </svg>
     `;
 
     // 2. Bottom-Left Notch for Right Benefits Cards
     const SVG_NOTCH_BL = `
       <svg class="notch-bl" viewBox="0 0 66 66" fill="none" preserveAspectRatio="none">
-        <path d="M 0 0 C 0 8.837 7.163 16 16 16 H 34 C 42.837 16 50 23.163 50 32 V 50 C 50 58.837 57.163 66 66 66 H 0 V 0 Z" fill="#FFFFFF"/>
+        <path d="M 0 0 C 0 8.837 7.163 16 16 16 H 34 C 42.837 16 50 23.163 50 32 V 50 C 50 58.837 57.163 66 66 66 H 0 V 0 Z" fill="rgb(238, 242, 248)"/>
       </svg>
     `;
 
     // 3. Top-Right Notch for Left Sidebar Tabs
     const SVG_NOTCH_TR = `
       <svg class="notch-tr" viewBox="0 0 76 76" fill="none" preserveAspectRatio="none">
-        <path d="M 0 0 C 9.941 0 18 8.059 18 18 V 40.846 C 18 50.787 26.059 58.846 36 58.846 H 58 C 67.941 58.846 76 66.905 76 76.846 V 0 H 0 Z" fill="#FFFFFF"/>
+        <path d="M 0 0 C 9.941 0 18 8.059 18 18 V 40.846 C 18 50.787 26.059 58.846 36 58.846 H 58 C 67.941 58.846 76 66.905 76 76.846 V 0 H 0 Z" fill="rgb(238, 242, 248)"/>
       </svg>
     `;
 
@@ -2398,17 +2408,17 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
     }
 
     // EXPOSE GLOBAL ACTION HANDLERS ON WINDOW (Critical for Dialogue CMS inline onclick execution)
-    window.selectCategory = function(catIndex) { return selectCategory(catIndex); };
-    window.openOpportunityDetail = function(oppId) { return openOpportunityDetail(oppId); };
-    window.goBackToCards = function() { return goBackToCards(); };
-    window.openBenefitModal = function(benefitName) { return openBenefitModal(benefitName); };
-    window.closeModal = function() { return closeModal(); };
-    window.handleModalOverlayClick = function(e) { return handleModalOverlayClick(e); };
-    window.selectOpportunityFromModal = function(oppId) { return selectOpportunityFromModal(oppId); };
-    window.handleEnquire = function(title) { return handleEnquire(title); };
-    window.fixDialogueParentHeight = function() { return fixDialogueParentHeight(); };
-    window.init = function() { return init(); };
-    window.startApp = function() { return startApp(); };
+    window.selectCategory = selectCategory;
+    window.openOpportunityDetail = openOpportunityDetail;
+    window.goBackToCards = goBackToCards;
+    window.openBenefitModal = openBenefitModal;
+    window.closeModal = closeModal;
+    window.handleModalOverlayClick = handleModalOverlayClick;
+    window.selectOpportunityFromModal = selectOpportunityFromModal;
+    window.handleEnquire = handleEnquire;
+    window.fixDialogueParentHeight = fixDialogueParentHeight;
+    window.init = init;
+    window.startApp = startApp;
 
     // GLOBAL EVENT DELEGATION (Ensures clicks function even in sandboxed Dialogue CMS environments)
     document.addEventListener('click', function(e) {
@@ -2519,7 +2529,7 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
         <div class="modal-item" data-modal-opp-id="${opp.id}" onclick="window.selectOpportunityFromModal ? window.selectOpportunityFromModal(${opp.id}) : selectOpportunityFromModal(${opp.id})">
           <div class="modal-item-left">
             <div class="modal-item-cat">${opp.categoryName}</div>
-            <div class="modal-item-title">${opp.title}</div>
+            <div class="modal-item-title header3">${opp.title}</div>
           </div>
           <div class="modal-item-arrow">${SVG_ARROW_RIGHT_SM}</div>
         </div>

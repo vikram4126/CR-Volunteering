@@ -76,7 +76,7 @@ export function BenefitModal({
               >
                 <div className="modal-item-left">
                   <div className="modal-item-cat">{opp.categoryName}</div>
-                  <div className="modal-item-title">{opp.title}</div>
+                  <div className="modal-item-title header3">{opp.title}</div>
                 </div>
                 <div className="modal-item-arrow">
                   <ArrowRightIcon size={17} strokeWidth={2.6} />
