@@ -621,7 +621,11 @@ h3.tab-title {
       stroke: none !important;
     }
 
-    .opp-arrow {
+    .opp-arrow,
+    .opp-arrow:hover,
+    .opp-arrow:visited,
+    .opp-arrow:active,
+    .opp-arrow:focus {
       position: absolute;
       right: 0;
       bottom: 0;
@@ -629,7 +633,7 @@ h3.tab-title {
       height: 42px;
       border-radius: 50%;
       background: var(--cobalt-blue);
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -646,6 +650,15 @@ h3.tab-title {
     .opp-card:hover .opp-arrow {
       transform: scale(1.1);
       background: var(--primary-blue-hover);
+      color: #FFFFFF !important;
+    }
+
+    .opp-arrow svg,
+    .opp-arrow svg path,
+    .opp-arrow svg line,
+    .opp-arrow svg polyline {
+      stroke: #FFFFFF !important;
+      color: #FFFFFF !important;
     }
 
     .opp-arrow svg,
@@ -882,7 +895,7 @@ h3.tab-title {
     }
 
     .felix-banner-desc {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-dark);
       line-height: 1.5;
     }
@@ -922,7 +935,7 @@ h3.tab-title {
     }
 
     .felix-card-desc {
-      font-size: 12px;
+      font-size: 14px;
       color: inherit;
       line-height: 1.5;
     }
