@@ -53,7 +53,9 @@ export function App() {
   const handleSelectCategory = (catIndex) => {
     if (catIndex === 3) {
       // Own Choice Volunteering is an external link - open directly in a new tab without altering current active tab
-      window.open('https://www.kpmg.com', '_blank');
+      const ownChoiceCat = categories.find((c) => c.id === 3);
+      const url = (ownChoiceCat && ownChoiceCat.externalUrl) || 'https://kpmgoneuk.sharepoint.com/:u:/r/sites/gb-oi-bus-CR/SitePages/Self-organised-volunteering.aspx?d=wad309bffe9fa428cbbf8474ab7634d9e&csf=1&web=1&e=HwAnXs';
+      window.open(url, '_blank');
       return;
     }
     setCurrentCategory(catIndex);

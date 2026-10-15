@@ -35,7 +35,7 @@ export function OpportunityDetail({ opp }) {
         <div className="detail-header">
           <h2 className="detail-title header2">{opp.title}</h2>
           <div className="detail-duration">
-            <DetailDurationBadge duration={opp.duration} />
+            <DetailDurationBadge duration={opp.duration} opp={opp} />
           </div>
         </div>
         <div className="detail-desc">

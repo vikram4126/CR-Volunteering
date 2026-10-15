@@ -548,6 +548,42 @@ h3.tab-title {
       gap: 8px;
     }
 
+    .dur-group.dur-two-part {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+    }
+
+    .dur-group.dur-two-part .dur-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .dur-group.dur-two-part .dur-stacked-text {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--text-navy);
+      white-space: nowrap;
+    }
+
+    .dur-group.dur-two-part .dur-unit {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--text-navy);
+      line-height: 1;
+      white-space: nowrap;
+    }
+
     .dur-num {
       font-size: 22px;
       font-weight: 700;
@@ -697,10 +733,11 @@ h3.tab-title {
 
     .detail-header {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
       margin-bottom: 16px;
+      flex-wrap: wrap;
     }
 
     .detail-title {
@@ -716,8 +753,70 @@ h3.tab-title {
       color: var(--text-navy);
       white-space: nowrap;
       display: inline-flex;
-      align-items: baseline;
+      align-items: center;
       gap: 6px;
+    }
+
+    .detail-duration-extended {
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+    }
+
+    .detail-suitability {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      line-height: 1.25;
+      text-align: left;
+    }
+
+    .detail-suitability .suitability-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-navy);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .detail-suitability .suitability-grade {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary-blue);
+      white-space: nowrap;
+    }
+
+    .detail-dur-metrics {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+    }
+
+    .detail-dur-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .detail-dur-stacked {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.15;
+    }
+
+    .detail-dur-stacked span {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-navy);
+      white-space: nowrap;
     }
 
     .detail-duration .detail-dur-num,
@@ -1602,7 +1701,8 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
         id: 3,
         name: 'Own Choice Volunteering',
         subtitle: 'You can use your professional skills, experience and networks to help a registered UK charity or state-funded school',
-        iconName: 'Own Choice Volunteering.svg'
+        iconName: 'Own Choice Volunteering.svg',
+        externalUrl: 'https://kpmgoneuk.sharepoint.com/:u:/r/sites/gb-oi-bus-CR/SitePages/Self-organised-volunteering.aspx?d=wad309bffe9fa428cbbf8474ab7634d9e&csf=1&web=1&e=HwAnXs'
       }
     ];
 
@@ -1621,7 +1721,7 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
     ];
 
     let benefitImpactDescriptions = {
-      "Short Commitment": "Just 1.5 hours, making it easy to fit into your schedule",
+      "Short Commitment": "Under 3 hours making it easy to fit into your schedule. This will hopefully reflect on all opportunities within this category.",
       "Greater Understanding of business": "Provide insight into KPMG’s work environment.",
       "Improved Communication & Collaboration": "Collaborate with students and colleagues",
       "Accelerate Personal & Professional Growth": "By engaging with students and facilitating learning, you enhance your own communication, mentoring, and presentation skills. Skills that are valuable in both personal growth and professional settings",
@@ -1731,7 +1831,7 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
                   },
                   {
                         "title": "Warehouse volunteering",
-                        "description": "Warehouse volunteering at FareShare involves sorting surplus food, picking orders, assisting deliveries, and sometimes cooking meals for communities. Join individually or as a group to support those in need.",
+                        "description": "Warehouse volunteering at Felix involves sorting surplus food, picking orders, assisting deliveries, and sometimes cooking meals for communities. Join individually or as a group to support those in need.",
                         "linkText": "Click here for more information",
                         "linkUrl": "https://www.kpmg.com"
                   },
@@ -1891,7 +1991,8 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
             "category": 1,
             "categoryName": "On-going Opportunities",
             "title": "School Governors",
-            "duration": "1-2 hour session",
+            "duration": "4-5 hours per month / 3-4 years",
+            "gradeSuitability": "Opportunity suitable for All grades",
             "description": "Governance roles such as school governor or trustee are a fantastic way to give back to your community and make a real difference in the lives of young people. It's a commitment that comes with a lot of responsibility, but the rewards are truly enriching.",
             "benefits": [
                   "Accelerate Personal & Professional Growth",
@@ -1911,7 +2012,8 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
             "category": 1,
             "categoryName": "On-going Opportunities",
             "title": "Charity Trustee",
-            "duration": "1-2 hour session",
+            "duration": "4-5 hours per month / 3-4 years",
+            "gradeSuitability": "Opportunity suitable for All grades",
             "description": "Being a charity trustee is a significant commitment requiring time, dedication, and a willingness to learn. However, the benefits are substantial, both for the charity and for the individual.",
             "benefits": [
                   "Accelerate Personal & Professional Growth",
@@ -2032,7 +2134,23 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
           `</span>`;
       }
 
-      // Case 2: Multi-number range e.g. "30 minutes to 1.5 hours"
+      // Case 2: Multi-duration with slash e.g. "4-5 hours per month / 3-4 years"
+      const slashMatch = trimmed.match(/^(\d+(?:-\d+)?(?:\.\d+)?)\s+([^/]+?)\s*\/\s*(\d+(?:-\d+)?(?:\.\d+)?)\s+(.+)$/i);
+      if (slashMatch) {
+        const isHoursPerMonth = slashMatch[2].trim().toLowerCase().includes('hour');
+        const unit2Text = slashMatch[4].trim().toLowerCase() === 'years' ? 'Years' : slashMatch[4].trim();
+        return `<span class="dur-group dur-two-part">` +
+          `<span class="dur-item">` +
+          `<span class="dur-num">${slashMatch[1]}</span>` +
+          (isHoursPerMonth
+            ? `<span class="dur-stacked-text"><span>hour per</span><span>month</span></span>`
+            : `<span class="dur-unit">${slashMatch[2].trim()}</span>`) +
+          `</span>` +
+          `<span class="dur-item"><span class="dur-num">${slashMatch[3]}</span><span class="dur-unit">${unit2Text}</span></span>` +
+          `</span>`;
+      }
+
+      // Case 3: Multi-number range e.g. "30 minutes to 1.5 hours"
       const multiMatch = trimmed.match(/^(\d+(?:\.\d+)?)\s+minutes\s+to\s+(\d+(?:\.\d+)?)\s+hours$/i);
       if (multiMatch) {
         return `<span class="dur-group">` +
@@ -2043,7 +2161,7 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
           `</span>`;
       }
 
-      // Case 3: Standard number + unit e.g. "30 minutes", "2-3 hours", "3 hours", "1-2 hours", "1-5 hours", "1-2 hour session"
+      // Case 4: Standard number + unit e.g. "30 minutes", "2-3 hours", "3 hours", "1-2 hours", "1-5 hours", "1-2 hour session"
       const singleMatch = trimmed.match(/^(\d+(?:-\d+)?(?:\.\d+)?)\s+(.+)$/);
       if (singleMatch) {
         return `<span class="dur-group">` +
@@ -2052,18 +2170,65 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
           `</span>`;
       }
 
-      // Case 4: Text only e.g. "Flexible Timing"
+      // Case 5: Text only e.g. "Flexible Timing"
       return `<span class="dur-group"><span class="dur-unit dur-text-only">${trimmed}</span></span>`;
     }
 
-    function formatDetailDurationHtml(durationText) {
+    function formatDetailDurationHtml(durationText, opp) {
       if (!durationText) return '';
       const trimmed = durationText.trim();
+      const title = (opp && opp.title) || '';
+      const isGovernorOrTrustee =
+        (opp && opp.gradeSuitability) ||
+        title.toLowerCase().includes('governor') ||
+        title.toLowerCase().includes('trustee');
 
-      // Multi-range e.g. "30 minutes to 1.5 hours"
-      const multiMatch = trimmed.match(/^(\d+(?:\.\d+)?)\s+minutes\s+to\s+(\d+(?:\.\d+)?)\s+hours$/i);
-      if (multiMatch) {
-        return `<span class="detail-dur-num">${multiMatch[1]}</span><span class="detail-dur-unit">minutes to</span><span class="detail-dur-num">${multiMatch[2]}</span><span class="detail-dur-unit">hours</span>`;
+      const slashMatch = trimmed.match(/^(\d+(?:-\d+)?(?:\.\d+)?)\s+([^/]+?)\s*\/\s*(\d+(?:-\d+)?(?:\.\d+)?)\s+(.+)$/i);
+
+      if (isGovernorOrTrustee) {
+        const num1 = slashMatch ? slashMatch[1] : '4-5';
+        const num2 = slashMatch ? slashMatch[3] : '3-4';
+        const unit2 = slashMatch && slashMatch[4].trim().toLowerCase() === 'years' ? 'Years' : (slashMatch ? slashMatch[4].trim() : 'Years');
+        return `
+          <div class="detail-duration-extended">
+            <div class="detail-suitability">
+              <span class="suitability-label">Opportunity suitable for:</span>
+              <strong class="suitability-grade">All grades</strong>
+            </div>
+            <div class="detail-dur-metrics">
+              <div class="detail-dur-item">
+                <span class="detail-dur-num">${num1}</span>
+                <span class="detail-dur-stacked">
+                  <span>hours</span>
+                  <span>per month</span>
+                </span>
+              </div>
+              <div class="detail-dur-item">
+                <span class="detail-dur-num">${num2}</span>
+                <span class="detail-dur-unit">${unit2}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      if (slashMatch) {
+        const unit2 = slashMatch[4].trim().toLowerCase() === 'years' ? 'Years' : slashMatch[4].trim();
+        return `
+          <div class="detail-dur-metrics">
+            <div class="detail-dur-item">
+              <span class="detail-dur-num">${slashMatch[1]}</span>
+              <span class="detail-dur-stacked">
+                <span>hours</span>
+                <span>per month</span>
+              </span>
+            </div>
+            <div class="detail-dur-item">
+              <span class="detail-dur-num">${slashMatch[3]}</span>
+              <span class="detail-dur-unit">${unit2}</span>
+            </div>
+          </div>
+        `;
       }
 
       // Standard Number + unit e.g. "30 minutes", "1-2 hours", "5-6 letters during Autumn Term"
@@ -2377,7 +2542,7 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
           <div>
             <div class="detail-header">
               <h2 class="detail-title header2">${opp.title}</h2>
-              <div class="detail-duration">${formatDetailDurationHtml(opp.duration)}</div>
+              <div class="detail-duration">${formatDetailDurationHtml(opp.duration, opp)}</div>
             </div>
             <div class="detail-desc">
             <p class="detail-desc-text">${opp.description}</p>
@@ -2513,7 +2678,9 @@ if (typeof module !== "undefined") { module.exports = APP_ICONS; }
     function selectCategory(catIndex) {
       if (catIndex === 3) {
         // Own Choice Volunteering is an external link - open directly in a new tab without altering current active tab
-        window.open('https://www.kpmg.com', '_blank');
+        const ownChoiceCat = categories.find(c => c.id === 3);
+        const url = (ownChoiceCat && ownChoiceCat.externalUrl) || 'https://kpmgoneuk.sharepoint.com/:u:/r/sites/gb-oi-bus-CR/SitePages/Self-organised-volunteering.aspx?d=wad309bffe9fa428cbbf8474ab7634d9e&csf=1&web=1&e=HwAnXs';
+        window.open(url, '_blank');
         return;
       }
       currentCategory = catIndex;

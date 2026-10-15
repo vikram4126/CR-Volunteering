@@ -13,7 +13,7 @@ export const allBenefits = [
 ];
 
 export const benefitImpactDescriptions = {
-  'Short Commitment': 'Just 1.5 hours, making it easy to fit into your schedule',
+  'Short Commitment': 'Under 3 hours making it easy to fit into your schedule. This will hopefully reflect on all opportunities within this category.',
   'Greater Understanding of business': 'Provide insight into KPMG’s work environment.',
   'Improved Communication & Collaboration': 'Collaborate with students and colleagues',
   'Accelerate Personal & Professional Growth': 'By engaging with students and facilitating learning, you enhance your own communication, mentoring, and presentation skills. Skills that are valuable in both personal growth and professional settings',

@@ -529,6 +529,42 @@ h3.tab-title {
   gap: 8px;
 }
 
+.dur-group.dur-two-part {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.dur-group.dur-two-part .dur-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.dur-group.dur-two-part .dur-stacked-text {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text-navy);
+  white-space: nowrap;
+}
+
+.dur-group.dur-two-part .dur-unit {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--text-navy);
+  line-height: 1;
+  white-space: nowrap;
+}
+
 .dur-num {
   font-size: 22px;
   font-weight: 700;
@@ -678,10 +714,11 @@ h3.tab-title {
 
 .detail-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
 .detail-title {
@@ -697,8 +734,70 @@ h3.tab-title {
   color: var(--text-navy);
   white-space: nowrap;
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 6px;
+}
+
+.detail-duration-extended {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.detail-suitability {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.detail-suitability .suitability-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-navy);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.detail-suitability .suitability-grade {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  white-space: nowrap;
+}
+
+.detail-dur-metrics {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.detail-dur-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.detail-dur-stacked {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.detail-dur-stacked span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-navy);
+  white-space: nowrap;
 }
 
 .detail-duration .detail-dur-num,

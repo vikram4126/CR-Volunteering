@@ -23,7 +23,7 @@
       "name": "Own Choice Volunteering",
       "subtitle": "You can use your professional skills, experience and networks to help a registered UK charity or state-funded school",
       "iconName": "Own Choice Volunteering.svg",
-      "externalUrl": "https://www.kpmg.com"
+      "externalUrl": "https://kpmgoneuk.sharepoint.com/:u:/r/sites/gb-oi-bus-CR/SitePages/Self-organised-volunteering.aspx?d=wad309bffe9fa428cbbf8474ab7634d9e&csf=1&web=1&e=HwAnXs"
     }
   ],
   "allBenefits": [
@@ -40,7 +40,7 @@
     "Enhanced Skills"
   ],
   "benefitImpactDescriptions": {
-    "Short Commitment": "Just 1.5 hours, making it easy to fit into your schedule",
+    "Short Commitment": "Under 3 hours making it easy to fit into your schedule. This will hopefully reflect on all opportunities within this category.",
     "Improved Communication & Collaboration": "Collaborate with students and colleagues",
     "Accelerate Personal & Professional Growth": "By engaging with students and facilitating learning, you enhance your own communication, mentoring, and presentation skills. Skills that are valuable in both personal growth and professional settings",
     "Strengthen Strategic Thinking": "Share sector expertise and guidance",
@@ -149,7 +149,7 @@
         },
         {
           "title": "Warehouse volunteering",
-          "description": "Warehouse volunteering at FareShare involves sorting surplus food, picking orders, assisting deliveries, and sometimes cooking meals for communities. Join individually or as a group to support those in need.",
+          "description": "Warehouse volunteering at Felix involves sorting surplus food, picking orders, assisting deliveries, and sometimes cooking meals for communities. Join individually or as a group to support those in need.",
           "linkText": "Click here for more information",
           "linkUrl": "https://www.kpmg.com"
         },
@@ -309,7 +309,8 @@
       "category": 1,
       "categoryName": "On-going Opportunities",
       "title": "School Governors",
-      "duration": "1-2 hour session",
+      "duration": "4-5 hours per month / 3-4 years",
+      "gradeSuitability": "Opportunity suitable for All grades",
       "description": "Governance roles such as school governor or trustee are a fantastic way to give back to your community and make a real difference in the lives of young people. It's a commitment that comes with a lot of responsibility, but the rewards are truly enriching.",
       "benefits": [
         "Accelerate Personal & Professional Growth",
@@ -329,7 +330,8 @@
       "category": 1,
       "categoryName": "On-going Opportunities",
       "title": "Charity Trustee",
-      "duration": "1-2 hour session",
+      "duration": "4-5 hours per month / 3-4 years",
+      "gradeSuitability": "Opportunity suitable for All grades",
       "description": "Being a charity trustee is a significant commitment requiring time, dedication, and a willingness to learn. However, the benefits are substantial, both for the charity and for the individual.",
       "benefits": [
         "Accelerate Personal & Professional Growth",

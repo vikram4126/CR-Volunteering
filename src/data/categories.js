@@ -22,7 +22,7 @@ export const categories = [
     name: 'Own Choice Volunteering',
     subtitle: 'You can use your professional skills, experience and networks to help a registered UK charity or state-funded school',
     iconName: 'Own Choice Volunteering.svg',
-    externalUrl: 'https://www.kpmg.com'
+    externalUrl: 'https://kpmgoneuk.sharepoint.com/:u:/r/sites/gb-oi-bus-CR/SitePages/Self-organised-volunteering.aspx?d=wad309bffe9fa428cbbf8474ab7634d9e&csf=1&web=1&e=HwAnXs'
   }
 ];
 
