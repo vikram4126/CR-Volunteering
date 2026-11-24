@@ -79,6 +79,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -123,7 +124,10 @@ preview-script,
 }
 
 /* Heading Hierarchy Classes (supporting both header2 and header-2) */
-h2.header2, .header2, h2.header-2, .header-2 {
+h2.header2,
+.header2,
+h2.header-2,
+.header-2 {
   font-size: 26px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -131,7 +135,10 @@ h2.header2, .header2, h2.header-2, .header-2 {
   margin: 0;
 }
 
-h3.header3, .header3, h3.header-3, .header-3 {
+h3.header3,
+.header3,
+h3.header-3,
+.header-3 {
   font-size: 22px;
   font-weight: 700;
   color: var(--primary-blue);
@@ -141,7 +148,10 @@ h3.header3, .header3, h3.header-3, .header-3 {
   line-height: 1.75rem;
 }
 
-h4.header4, .header4, h4.header-4, .header-4 {
+h4.header4,
+.header4,
+h4.header-4,
+.header-4 {
   font-size: 16px;
   font-weight: 700;
   color: var(--text-navy);
