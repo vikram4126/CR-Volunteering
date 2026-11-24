@@ -21,13 +21,14 @@ export function OpportunityDetail({ opp }) {
       : 'If you are interested in this opportunity, please get in touch below';
   const buttonLabel =
     opp.buttonText || (isExternal ? 'Register now' : 'Enquire now');
-  const metaItems =
+  const metaItems = (
     opp.metaDetails ||
     [
       opp.location && { label: 'Location:', value: opp.location },
       opp.timeCommitment && { label: 'Time commitment:', value: opp.timeCommitment },
       opp.dates && { label: 'Dates:', value: opp.dates }
-    ].filter(Boolean);
+    ].filter(Boolean)
+  ).filter((item) => item && ((item.label && item.label.trim()) || (item.value && item.value.trim())));
 
   return (
     <div className="card-detail-view">

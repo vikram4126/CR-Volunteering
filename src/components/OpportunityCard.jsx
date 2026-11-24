@@ -28,7 +28,12 @@ export function OpportunityCard({ opp, onSelect }) {
         >
           {opp.title}
         </h3>
-        <p className="opp-desc">{opp.cardDescription || opp.description}</p>
+        <p
+          className="opp-desc"
+          dangerouslySetInnerHTML={{
+            __html: opp.cardDescription || opp.description,
+          }}
+        />
       </div>
 
       <div>

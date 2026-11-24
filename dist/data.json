@@ -40,7 +40,7 @@
     "Enhanced Skills"
   ],
   "benefitImpactDescriptions": {
-    "Short Commitment": "Under 3 hours making it easy to fit into your schedule. This will hopefully reflect on all opportunities within this category.",
+    "Short Commitment": "Under 3 hours making it easy to fit into your schedule.",
     "Improved Communication & Collaboration": "Collaborate with students and colleagues",
     "Accelerate Personal & Professional Growth": "By engaging with students and facilitating learning, you enhance your own communication, mentoring, and presentation skills. Skills that are valuable in both personal growth and professional settings",
     "Strengthen Strategic Thinking": "Share sector expertise and guidance",
@@ -82,7 +82,7 @@
         "Accelerate Personal & Professional Growth"
       ],
       "contactNote": "New dates to be released soon.",
-      "enquireUrl": "",
+      "enquireUrl": "mailto:Suhail.Shahid@kpmg.co.uk",
       "metaDetails": [
         {
           "label": "Upcoming dates:",
@@ -103,8 +103,8 @@
         "Short Commitment",
         "Educational Impact"
       ],
-      "contactNote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "enquireUrl": ""
+      "contactNote": "",
+      "enquireUrl": "https://forms.fillout.com/t/4VuG5Q4qNhus"
     },
     {
       "id": 4,
@@ -139,19 +139,19 @@
           "title": "Fundraise for FELIX",
           "description": "Learn about the different ways you can help to raise funds. For every £1 we raise through our partnership, Felix will be able to redistribute the equivalent of 5 meals to those who need it most.",
           "linkText": "Click here for more information",
-          "linkUrl": "https://www.kpmg.com"
+          "linkUrl": "https://kpmgoneuk.sharepoint.com/sites/gb-oi-bus-CR/SitePages/fundraise-for-fareshare.aspx"
         },
         {
           "title": "Volunteer for FELIX",
           "description": "Volunteering with Felix supports social impact, builds teamwork, boosts well-being, and develops skills. From packing food to cooking meals or creating care parcels, your time makes a meaningful difference.",
           "linkText": "Click here for more information",
-          "linkUrl": "https://www.kpmg.com"
+          "linkUrl": "https://kpmgoneuk.sharepoint.com/sites/gb-oi-bus-CR/SitePages/volunteer-for-fareshare.aspx"
         },
         {
           "title": "Warehouse volunteering",
           "description": "Warehouse volunteering at Felix involves sorting surplus food, picking orders, assisting deliveries, and sometimes cooking meals for communities. Join individually or as a group to support those in need.",
           "linkText": "Click here for more information",
-          "linkUrl": "https://www.kpmg.com"
+          "linkUrl": "https://kpmgoneuk.sharepoint.com/sites/gb-oi-bus-CR/SitePages/volunteer-for-fareshare.aspx#warehouse-volunteering"
         },
         {
           "title": "Funding Fuller Plates",
@@ -168,7 +168,7 @@
       "category": 0,
       "categoryName": "One-off Volunteering",
       "title": "Inspire world of work visits",
-      "duration": "Timing to be confirmed",
+      "duration": "",
       "description": "Inspire World of Work visits have been designed to give primary schools in London access to our offices to give them insight into the world of work and help them develop essential future skills by taking on the challenges facing our clients.",
       "benefits": [
         "Build professional Networks",
@@ -176,7 +176,7 @@
         "Educational Impact",
         "Short Commitment"
       ],
-      "contactNote": "Timing to be confirmed. Register now via Microsoft Forms",
+      "contactNote": "Register now via Microsoft Forms",
       "enquireUrl": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=uyT_3okgAESMjvceaAN4smegukqNpCBOhmXQn5qRfg5UODlUNFAzOTdJOVNFV1NOT001WkNYR0tKNy4u"
     },
     {
@@ -219,7 +219,7 @@
         },
         {
           "label": "Block 2 (SATs):",
-          "value": "Opens March – April"
+          "value": "Opens Feb – Mar"
         }
       ]
     },
@@ -257,16 +257,7 @@
         "Educational Impact"
       ],
       "contactNote": "",
-      "enquireUrl": "https://theswitch.my.site.com/s/",
-      "dates": "Various across summer",
-      "metaDetails": [
-        {
-          "label": "Dates:",
-          "value": "Various across summer"
-        }
-      ],
-      "buttonText": "Sign up",
-      "additionalText": "Sign up: <a href=\"https://theswitch.my.site.com/s/\" target=\"_blank\" rel=\"noopener noreferrer\">View sessions here</a>"
+      "enquireUrl": "https://theswitch.my.site.com/s/"
     },
     {
       "id": 11,
@@ -283,7 +274,7 @@
         "Greater Understanding of business"
       ],
       "contactNote": "To express interest in joining the November ‘26 cohort.",
-      "enquireUrl": "",
+      "enquireUrl": "https://forms.fillout.com/t/4VuG5Q4qNhus",
       "cardDescription": "Inspiration for All is a 9-month mentoring programme pairing KPMG leaders with UK school heads to grow leadership skills.",
       "buttonText": "Register here"
     },
@@ -293,7 +284,7 @@
       "categoryName": "On-going Opportunities",
       "title": "Stem Ambassadors",
       "duration": "Flexible Timing",
-      "description": "STEM Ambassadors inspire young people in science, technology, engineering, and mathematics, opening doors to exciting career pathways.\n\nThis is a self-organised volunteering opportunity. To register as a STEM Ambassador, you will need to <a href=\"https://www.stem.org.uk/stem-ambassadors/become-a-stem-ambassador\" target=\"_blank\" rel=\"noopener noreferrer\">Register your interest here</a>.",
+      "description": "STEM Ambassadors inspire young people in science, technology, engineering, and mathematics, opening doors to exciting career pathways.\n\nThis is a self-organised volunteering opportunity. To register as a STEM Ambassador, you will need to <a href=\"https://kpmgoneuk.sharepoint.com/sites/gb-oi-bus-CR/SitePages/volunteering-opportuntites-stem-ambassadors.aspx\" target=\"_blank\" rel=\"noopener noreferrer\">Register your interest here</a>.",
       "cardDescription": "STEM Ambassadors inspire young people in science, technology, engineering, and mathematics, opening doors to exciting career pathways.",
       "benefits": [
         "Educational Impact",
@@ -332,7 +323,7 @@
       "title": "Charity Trustee",
       "duration": "4-5 hours per month / 3-4 years",
       "gradeSuitability": "Opportunity suitable for All grades",
-      "description": "Being a charity trustee is a significant commitment requiring time, dedication, and a willingness to learn. However, the benefits are substantial, both for the charity and for the individual.",
+      "description": "Being a charity trustee is a significant commitment requiring time, dedication, and a willingness to learn. However, the benefits are substantial, both for the charity and for the individual.<br><br> To understand more about the role of the Trustee, please read <a href=\"https://kpmgoneuk.sharepoint.com/:b:/s/GB-CorporateResponsibility/IQCvyf2prxhISL4iYhHuUzBDAWRqbJS-kEbh9k-h0AYXNlc?e=nyW8Hc\" target=\"_blank\" rel=\"noopener noreferrer\">more</a>. ",
       "benefits": [
         "Accelerate Personal & Professional Growth",
         "Improved Communication & Collaboration",
@@ -343,7 +334,7 @@
         "Build professional Networks",
         "Greater Understanding of business"
       ],
-      "contactNote": "To find out more about becoming a charity trustee, contact our team below",
+      "contactNote": " <a href=\"https://kpmgoneuk.sharepoint.com/:b:/r/sites/GB-CorporateResponsibility/Shared%20Documents/Governance%20for%20Better/Charity%20Trusteeship/Resources/Guide%20to%20becoming%20a%20Charity%20Trustee.pdf?d=wb22285b81e8040a3a74cb1baf3b2f2ec&csf=1&web=1&e=xEerNa&isSPOFile=1&xsdata=MDV8MDJ8fDUxMWVlYmIxNDM5YTQwNzAwNjA1MDhkZjMzN2IzMTdkfGRlZmYyNGJiMjA4OTQ0MDA4YzhlZjcxZTY4MDM3OGIyfDB8MHw2MzkyODYyNzYzMTQxNzA4ODV8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKRFFTSTZJbFJsWVcxelgwRlVVRk5sY25acFkyVmZVMUJQVEU5R0lpd2lWaUk2SWpBdU1DNHdNREF3SWl3aVVDSTZJbGRwYmpNeUlpd2lRVTRpT2lKUGRHaGxjaUlzSWxkVUlqb3hNWDA9fDF8TDJOb1lYUnpMekU1T2pka1l6VmxaVGd5TFROaU1XTXRORFF4TVMwNU9URXdMV013T0dJNFpqUmlNMlEyWlY5all6WTBNRFl6WVMxaFpqZzJMVFJrTlRrdE9XRmpZeTFpTVRZNE5tUXdZVGswWXpSQWRXNXhMbWRpYkM1emNHRmpaWE12YldWemMyRm5aWE12TVRjNU16QXpNRGd6TURrNU13PT18MTgzNWI2ZDlmOGI1NGM1MjU1NzYwOGRmMzM3YjMxN2N8YzUxOWMyYzM4ZjI3NGQ3Njg0YTQ5NTBkNDEzZWUyYTA%3D&sdata=a1dhLzVKOFk0WTMzYjBTb1poZTdGQkdKN0xwdHozVk1tSkxybW5qdldOOD0%3D&ovuser=deff24bb-2089-4400-8c8e-f71e680378b2%2Cyuwarajbahadur%40kpmg.com\" target=\"_blank\" rel=\"noopener noreferrer\">Trustee Guide</a> The steps in the guide can help support your trusteeship search. <br><br> To find out more about becoming a charity trustee, contact our team below",
       "enquireUrl": "mailto:CorporateResponsibility&Sustainability@kpmg.co.uk?subject=Enquiry%20-%20Charity%20Trustee"
     },
     {
@@ -387,16 +378,7 @@
         "Educational Impact"
       ],
       "contactNote": "",
-      "enquireUrl": "https://theswitch.my.site.com/s/",
-      "dates": "Various across summer",
-      "metaDetails": [
-        {
-          "label": "Dates:",
-          "value": "Various across summer"
-        }
-      ],
-      "buttonText": "Sign up",
-      "additionalText": "Sign up: <a href=\"https://theswitch.my.site.com/s/\" target=\"_blank\" rel=\"noopener noreferrer\">View sessions here</a>"
+      "enquireUrl": "https://theswitch.my.site.com/s/"
     },
     {
       "id": 17,
