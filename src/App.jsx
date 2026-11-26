@@ -49,6 +49,56 @@ export function App() {
     ? opportunities.find((o) => o.id === selectedOpportunityId) || null
     : null;
 
+  // Scroll helper to jump back up to top of middle section / activity detail
+  const scrollToMiddleTop = () => {
+    const executeScroll = () => {
+      try {
+        const root = document.documentElement;
+        const prevBehavior = root ? root.style.scrollBehavior : '';
+        if (root) root.style.scrollBehavior = 'auto';
+
+        const target =
+          document.getElementById('middleHeading') ||
+          document.querySelector('.card-detail-view') ||
+          document.querySelector('.felix-view') ||
+          document.querySelector('.middle-section') ||
+          document.querySelector('.app-container');
+
+        if (target && typeof target.scrollIntoView === 'function') {
+          target.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }
+
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        if (document.documentElement) {
+          document.documentElement.scrollTop = 0;
+        }
+        if (document.body) {
+          document.body.scrollTop = 0;
+        }
+
+        if (root) {
+          setTimeout(() => {
+            root.style.scrollBehavior = prevBehavior;
+          }, 50);
+        }
+      } catch (e) {
+        console.warn('Scroll to detail error:', e);
+      }
+    };
+
+    executeScroll();
+    requestAnimationFrame(executeScroll);
+    setTimeout(executeScroll, 30);
+    setTimeout(executeScroll, 100);
+  };
+
+  // Whenever an opportunity is selected, automatically scroll up to the activity detail
+  useEffect(() => {
+    if (selectedOpportunityId) {
+      scrollToMiddleTop();
+    }
+  }, [selectedOpportunityId]);
+
   // Handlers
   const handleSelectCategory = (catIndex) => {
     if (catIndex === 3) {
@@ -60,6 +110,7 @@ export function App() {
     }
     setCurrentCategory(catIndex);
     setSelectedOpportunityId(null);
+    scrollToMiddleTop();
   };
 
   const handleSelectOpportunity = (oppId) => {
@@ -68,11 +119,12 @@ export function App() {
     if (opp && opp.category !== currentCategory) {
       setCurrentCategory(opp.category);
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToMiddleTop();
   };
 
   const handleBack = () => {
     setSelectedOpportunityId(null);
+    scrollToMiddleTop();
   };
 
   const handleOpenBenefitModal = (benefitName) => {

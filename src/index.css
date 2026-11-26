@@ -399,6 +399,7 @@ h3.tab-title {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  scroll-margin-top: 24px;
 }
 
 .cards-grid {
@@ -715,6 +716,7 @@ h3.tab-title {
   flex-direction: column;
   justify-content: space-between;
   animation: fadeIn 0.3s ease;
+  scroll-margin-top: 24px;
 }
 
 @keyframes fadeIn {
