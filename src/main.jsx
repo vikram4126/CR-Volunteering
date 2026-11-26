@@ -17,6 +17,8 @@ function fixDialogueParentHeight() {
   }
 }
 
+window.fixDialogueParentHeight = fixDialogueParentHeight;
+
 function mountApp() {
   const rootEl = document.getElementById('root');
   if (rootEl) {

@@ -49,53 +49,82 @@ export function App() {
     ? opportunities.find((o) => o.id === selectedOpportunityId) || null
     : null;
 
-  // Scroll helper to jump back up to top of middle section / activity detail
-  const scrollToMiddleTop = () => {
-    const executeScroll = () => {
+  // Scroll helper: smoothly scrolls viewport to the middle section header
+  // so that the opportunity detail view and Back button are immediately visible in view
+  const scrollToDetailView = () => {
+    const executeScroll = (behavior = 'smooth') => {
       try {
-        const root = document.documentElement;
-        const prevBehavior = root ? root.style.scrollBehavior : '';
-        if (root) root.style.scrollBehavior = 'auto';
-
         const target =
+          document.querySelector('.middle-section .section-header') ||
           document.getElementById('middleHeading') ||
-          document.querySelector('.card-detail-view') ||
-          document.querySelector('.felix-view') ||
-          document.querySelector('.middle-section') ||
-          document.querySelector('.app-container');
+          document.querySelector('.middle-section');
 
-        if (target && typeof target.scrollIntoView === 'function') {
-          target.scrollIntoView({ behavior: 'auto', block: 'start' });
+        if (!target) return;
+
+        // Check if there is an ancestor scroll pane in Dialogue CMS host page
+        let scrollableParent = null;
+        let p = target.parentElement;
+        while (p && p !== document.body && p !== document.documentElement) {
+          const style = window.getComputedStyle(p);
+          const overflowY = style.overflowY;
+          if ((overflowY === 'auto' || overflowY === 'scroll') && p.scrollHeight > p.clientHeight) {
+            scrollableParent = p;
+            break;
+          }
+          p = p.parentElement;
         }
 
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-        if (document.documentElement) {
-          document.documentElement.scrollTop = 0;
-        }
-        if (document.body) {
-          document.body.scrollTop = 0;
+        if (scrollableParent) {
+          const parentRect = scrollableParent.getBoundingClientRect();
+          const targetRect = target.getBoundingClientRect();
+          const offsetTop = targetRect.top - parentRect.top + scrollableParent.scrollTop - 14;
+          scrollableParent.scrollTo({
+            top: Math.max(0, offsetTop),
+            behavior: behavior
+          });
+        } else {
+          const targetRect = target.getBoundingClientRect();
+          const targetY = window.pageYOffset + targetRect.top - 14;
+          window.scrollTo({
+            top: Math.max(0, targetY),
+            behavior: behavior
+          });
         }
 
-        if (root) {
-          setTimeout(() => {
-            root.style.scrollBehavior = prevBehavior;
-          }, 50);
+        if (typeof target.scrollIntoView === 'function') {
+          target.scrollIntoView({ behavior: behavior, block: 'start', inline: 'nearest' });
         }
       } catch (e) {
         console.warn('Scroll to detail error:', e);
       }
     };
 
-    executeScroll();
-    requestAnimationFrame(executeScroll);
-    setTimeout(executeScroll, 30);
-    setTimeout(executeScroll, 100);
+    executeScroll('smooth');
+    requestAnimationFrame(() => executeScroll('smooth'));
+    setTimeout(() => executeScroll('smooth'), 50);
+    setTimeout(() => executeScroll('smooth'), 150);
+
+    // Dialogue CMS & Webview Fallback: If smooth scroll was interrupted or not supported,
+    // verify after 260ms that target is in view. If still scrolled away, do instant snap.
+    setTimeout(() => {
+      const target = document.querySelector('.middle-section .section-header') || document.getElementById('middleHeading');
+      if (target) {
+        const r = target.getBoundingClientRect();
+        if (r.top > 80 || r.top < -40) {
+          executeScroll('auto');
+        }
+      }
+    }, 260);
   };
 
-  // Whenever an opportunity is selected, automatically scroll up to the activity detail
+  // Whenever an opportunity is selected, automatically scroll to detail view with back button
   useEffect(() => {
     if (selectedOpportunityId) {
-      scrollToMiddleTop();
+      scrollToDetailView();
+      if (typeof window.fixDialogueParentHeight === 'function') {
+        window.fixDialogueParentHeight();
+        setTimeout(window.fixDialogueParentHeight, 100);
+      }
     }
   }, [selectedOpportunityId]);
 
@@ -110,7 +139,7 @@ export function App() {
     }
     setCurrentCategory(catIndex);
     setSelectedOpportunityId(null);
-    scrollToMiddleTop();
+    // User requested: "agar user ne home based working per kiya to normal koi scroll nahi"
   };
 
   const handleSelectOpportunity = (oppId) => {
@@ -119,12 +148,12 @@ export function App() {
     if (opp && opp.category !== currentCategory) {
       setCurrentCategory(opp.category);
     }
-    scrollToMiddleTop();
+    scrollToDetailView();
   };
 
   const handleBack = () => {
     setSelectedOpportunityId(null);
-    scrollToMiddleTop();
+    scrollToDetailView();
   };
 
   const handleOpenBenefitModal = (benefitName) => {
